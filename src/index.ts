@@ -51,7 +51,7 @@ export class Core {
   private static logger: any = new Logger();
   static Core: typeof Core;
 
-  static async ResponseDataAsyc(
+  static async ResponseDataAsync(
     message: string | Object,
     data: any,
   ): Promise<Core.Response.Answer> {
