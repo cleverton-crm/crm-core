@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "amd",
+    "module": "commonjs",
     "moduleResolution": "node",
     "declaration": true,
     "removeComments": false,
@@ -10,11 +10,13 @@
     "noImplicitAny": false,
     "target": "es2020",
     "strict": true,
+    "noEmit": false,
     "sourceMap": false,
-    "out": "./index.js",
+    "outDir": "./core",
     "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
+    "incremental": false,
+    "skipLibCheck": true
 
-  }
+  },
+
 }

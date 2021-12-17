@@ -17,17 +17,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cleverdeus/core-types.git"
+    "url": "git+https://github.com/cleverdeus/micro-core.git"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "./core/index.js",
   "module": "index.js",
-  "types": "index.d.ts",
+  "types": "./core/index.d.ts",
   "bugs": {
-    "url": "https://github.com/cleverdeus/core-types/issues"
+    "url": "https://github.com/cleverdeus/micro-core/issues"
   },
   "scripts": {
     "docs": "typedoc",
+    "build": "rimraf core && tsc",
     "release": "standard-version",
     "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage",
     "test": "yarn lint && yarn test-typescript",
