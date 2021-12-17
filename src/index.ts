@@ -51,10 +51,18 @@ export class Core {
   private static logger: any = new Logger();
   static Core: typeof Core;
 
-  static ResponseData(
+  static async ResponseDataAsyc(
     message: string | Object,
     data: any,
-  ): Promise<Core.Response.Answer> | Core.Response.Data {
+  ): Promise<Core.Response.Answer> {
+    return {
+      statusCode: 200,
+      message: message,
+      data: data,
+    };
+  }
+
+  static ResponseData(message: string | Object, data: any): Core.Response.Data {
     return {
       statusCode: 200,
       message: message,
