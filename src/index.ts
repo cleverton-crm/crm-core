@@ -51,6 +51,12 @@ export class Core {
   private static logger: any = new Logger();
   static Core: typeof Core;
 
+  /**
+   * Async Response Data
+   * @param message
+   * @param data
+   * @constructor
+   */
   static async ResponseDataAsync(
     message: string | Object,
     data: any,

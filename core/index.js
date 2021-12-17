@@ -9,6 +9,12 @@ var Client;
 const fs = require('fs');
 const { Logger } = require('@nestjs/common');
 class Core {
+    /**
+     * Async Response Data
+     * @param message
+     * @param data
+     * @constructor
+     */
     static async ResponseDataAsync(message, data) {
         return {
             statusCode: 200,

@@ -36,6 +36,12 @@ export declare namespace Client {
 export declare class Core {
     private static logger;
     static Core: typeof Core;
+    /**
+     * Async Response Data
+     * @param message
+     * @param data
+     * @constructor
+     */
     static ResponseDataAsync(message: string | Object, data: any): Promise<Core.Response.Answer>;
     static ResponseData(message: string | Object, data: any): Core.Response.Data;
     static ResponseSuccess(message: string | Object, status?: number): Promise<Core.Response.Answer> | Core.Response.Success;
