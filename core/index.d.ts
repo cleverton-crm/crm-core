@@ -1,4 +1,4 @@
-import { ClientProxy } from '@nestjs/microservices';
+import { Observable } from 'rxjs';
 export declare namespace Core {
     /**
      * Response Core Api
@@ -27,6 +27,12 @@ export declare namespace Core {
         type Answer = Data | Success | Error;
     }
 }
+export declare namespace Client {
+    class ClientProxy {
+        send<TResult = any, TInput = any>(pattern: any, data: TInput): Observable<TResult>;
+        emit<TResult = any, TInput = any>(pattern: any, data: TInput): Observable<TResult>;
+    }
+}
 export declare class Core {
     private static logger;
     static Core: typeof Core;
@@ -41,5 +47,5 @@ export declare class Core {
      */
     static ResponseError(message: string | string[], status: number, errors: string): Promise<Core.Response.Answer> | Core.Response.Error;
     static OperationReadMe(path: string, context?: string): string | undefined;
-    static SendAndResponse(client: ClientProxy, pattern: string, data: any): Promise<any>;
+    static SendAndResponse(client: Client.ClientProxy, pattern: string, data: any): Promise<any>;
 }

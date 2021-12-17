@@ -1,5 +1,4 @@
-import { firstValueFrom } from 'rxjs';
-import { ClientProxy } from '@nestjs/microservices';
+import { firstValueFrom, Observable } from 'rxjs';
 import { HttpException, HttpStatus } from '@nestjs/common';
 
 export namespace Core {
@@ -29,6 +28,19 @@ export namespace Core {
       error: string;
     }
     export type Answer = Data | Success | Error;
+  }
+}
+
+export namespace Client {
+  export declare class ClientProxy {
+    send<TResult = any, TInput = any>(
+      pattern: any,
+      data: TInput,
+    ): Observable<TResult>;
+    emit<TResult = any, TInput = any>(
+      pattern: any,
+      data: TInput,
+    ): Observable<TResult>;
   }
 }
 
@@ -97,13 +109,13 @@ export class Core {
   }
 
   static async SendAndResponse(
-    client: ClientProxy,
+    client: Client.ClientProxy,
     pattern: string,
     data: any,
   ) {
     const userResponse = await firstValueFrom(client.send(pattern, data));
 
-    if (userResponse.statusCode !== HttpStatus.OK) {
+    if (userResponse.statusCode !== 200) {
       if (userResponse.statusCode === undefined) {
         throw new HttpException(
           {
