@@ -16,7 +16,6 @@
     "baseUrl": "./",
     "incremental": false,
     "skipLibCheck": true
-
   },
 
 }

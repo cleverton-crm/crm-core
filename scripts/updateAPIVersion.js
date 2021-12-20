@@ -29,7 +29,7 @@ const main = () => {
     });
 
   // replaceAPIVersion('README.md', 'apiVersion: [\'"]API_VERSION[\'"]');
-  // replaceAPIVersion('package.json', '"types": "types/API_VERSION/index.d.ts');
+  // replaceAPIVersion('package.json', '"types": "types/API_VERSION/core.ts');
 };
 
 if (require.main === module) {

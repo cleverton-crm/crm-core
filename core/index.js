@@ -11,8 +11,8 @@ const { Logger } = require('@nestjs/common');
 class Core {
     /**
      * Async Response Data
-     * @param message
-     * @param data
+     * @param {String} message
+     * @param {any} data
      * @constructor
      */
     static async ResponseDataAsync(message, data) {
@@ -82,3 +82,4 @@ exports.Core = Core;
 Core.logger = new Logger();
 module.exports = Core;
 module.exports.Core = Core;
+module.exports.default = Core;
