@@ -1,6 +1,6 @@
 {
   "name": "micro-core",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "TypeScript definitions for Cleverdeus Miscroservice",
   "homepage": "https://github.com/cleverdeus/core-types#readme",
   "contributors": [
@@ -15,6 +15,14 @@
       "githubUsername": "Cold927"
     }
   ],
+  "bin": {
+    "micro-core": "core/envtools/index.js"
+  },
+  "files": [
+    "core/index.js",
+    "core/envtools/index.js",
+    "core/envtools/utils.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cleverdeus/micro-core.git"
@@ -27,6 +35,7 @@
     "url": "https://github.com/cleverdeus/micro-core/issues"
   },
   "scripts": {
+    "micro-core": "node core/envtools/index.js",
     "docs": "typedoc",
     "build": "rimraf core && tsc",
     "release": "standard-version",
