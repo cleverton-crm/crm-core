@@ -5,7 +5,7 @@ export declare namespace Core {
      * Core.Response.Data - используется при правильном ответе с данными
      */
     namespace Response {
-        export interface Data {
+        interface Data {
             statusCode: number;
             message: string | Object;
             data: any;
@@ -13,14 +13,14 @@ export declare namespace Core {
         /**
          * Core.Response.Success - используется при правильном ответе
          */
-        export interface Success {
+        interface Success {
             statusCode: number;
             message: string | Object;
         }
         /**
          * Core.Response.Error - Используется при ошибке
          */
-        export interface Error {
+        interface Error {
             statusCode: number;
             message: string | string[];
             error: string;
@@ -37,8 +37,7 @@ export declare namespace Core {
             message: string | string[];
             error: string;
         }
-        export type Answer = Data | Success | Error | NotFound | BadRequest;
-        export {};
+        type Answer = Data | Success | Error | NotFound | BadRequest;
     }
     namespace Geo {
         interface Location {

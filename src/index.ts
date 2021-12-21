@@ -31,14 +31,14 @@ export namespace Core {
     }
 
     /** Ошибочные данные - объект не найден */
-    interface NotFound {
+    export interface NotFound {
       statusCode: number;
       message: string | string[];
       error: string;
     }
 
     /** Ошибочные данные - не правильный запрос */
-    interface BadRequest {
+    export interface BadRequest {
       statusCode: number;
       message: string | string[];
       error: string;
