@@ -1,5 +1,5 @@
 {
-  "name": "micro-core",
+  "name": "crm-core",
   "version": "1.0.3",
   "description": "TypeScript definitions for Cleverdeus Miscroservice",
   "homepage": "https://github.com/cleverdeus/core-types#readme",
@@ -25,14 +25,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cleverdeus/micro-core.git"
+    "url": "git+https://github.com/cleverton-crm/crm-core.git"
   },
   "license": "MIT",
   "main": "./core/index.js",
   "module": "index.js",
   "types": "./core/index.d.ts",
   "bugs": {
-    "url": "https://github.com/cleverdeus/micro-core/issues"
+    "url": "https://github.com/cleverton-crm/crm-core.git"
   },
   "scripts": {
     "micro-core": "node core/envtools/index.js",
