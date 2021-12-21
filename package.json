@@ -35,7 +35,7 @@
     "url": "https://github.com/cleverton-crm/crm-core.git"
   },
   "scripts": {
-    "micro-core": "node core/envtools/index.js",
+    "core": "node core/envtools/index.js",
     "docs": "typedoc",
     "build": "rimraf core && tsc",
     "release": "standard-version",
