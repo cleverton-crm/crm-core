@@ -1,6 +1,5 @@
 import { firstValueFrom, Observable } from 'rxjs';
 import { HttpException, HttpStatus } from '@nestjs/common';
-
 export namespace Core {
   /**
    * Response Core Api
