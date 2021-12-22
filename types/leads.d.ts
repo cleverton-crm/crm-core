@@ -15,9 +15,15 @@ declare module 'crm-core' {
      * Основная информация о лиде
      */
     export interface Info {
+      /** Название компании */
       name: string;
+
+      /** Кому пренадлежит запись*/
       owner: any;
+
+      /** Кто имеет доступ  к данным */
       permissions: any;
+      
       payerType: string | Company.Ownership;
       fullname: string;
       position: string;

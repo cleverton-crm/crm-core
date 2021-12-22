@@ -102,12 +102,12 @@ declare module 'crm-core' {
         region_type: string;
         region_type_full: string;
         region: string;
-        area_fias_id: null;
-        area_kladr_id: null;
-        area_with_type: null;
-        area_type: null;
-        area_type_full: null;
-        area: null;
+        area_fias_id: string | null;
+        area_kladr_id: string | null;
+        area_with_type: string | null;
+        area_type: string | null;
+        area_type_full: string | null;
+        area: string | null;
         city_fias_id: string;
         city_kladr_id: string;
         city_with_type: string;
