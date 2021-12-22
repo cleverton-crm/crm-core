@@ -202,7 +202,7 @@ declare namespace Company {
       branch_count: number;
       source: string | null;
       qc: string | null;
-      hid: string | string;
+      hid: string | null;
       type: string;
       state: Company.Requisites.State;
       opf: Company.Requisites.OPF;
@@ -334,8 +334,13 @@ declare namespace Company {
     }
   }
 
-  export class CollectionsCompany implements Company.Requisites.CompanyName {}
-  export class CollectionsActives implements Company.Actives.Assets {}
-  export class CollectionsHolding implements Company.Holding.Stage {}
-  export class CollectionsCars implements Company.Cars.Vehicle {}
+  export class CompanySchema implements Company.Requisites.CompanyName {
+    companyId: string;
+    value: string;
+    unrestricted_value?: string;
+    data: Company.Requisites.CompanyUs;
+  }
+  export class CompanyActives implements Company.Actives.Assets {}
+  export class CompanyHolding implements Company.Holding.Stage {}
+  export class CompanyCars implements Company.Cars.Vehicle {}
 }

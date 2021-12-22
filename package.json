@@ -16,11 +16,12 @@
     }
   ],
   "bin": {
-    "crm-core": "core/envtools/index.js"
+    "micro-core": "core/envtools/index.js"
   },
   "files": [
     "core/index.js",
     "types/**/*"
+
   ],
   "repository": {
     "type": "git",
@@ -29,7 +30,7 @@
   "license": "MIT",
   "main": "./core/index.js",
   "module": "index.js",
-  "types": "index.d.ts",
+  "types": "./core/index.d.ts",
   "bugs": {
     "url": "https://github.com/cleverton-crm/crm-core.git"
   },
