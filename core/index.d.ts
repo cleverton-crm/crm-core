@@ -5,6 +5,20 @@ export declare namespace Core {
      * Core.Response.Data - используется при правильном ответе с данными
      */
     namespace Response {
+        interface RecordLabels {
+            totalDocs: 'totalPages';
+            docs: 'data';
+            limit: 'perPage';
+            page: 'currentPage';
+            nextPage: 'next';
+            prevPage: 'prev';
+            totalPages: 'pageCount';
+            pagingCounter: 'slNo';
+            meta: 'records';
+        }
+        /**
+         *
+         */
         interface Data {
             statusCode: number;
             message: string | Object;
@@ -110,6 +124,17 @@ export declare class Core {
     static OperationReadMe(path: string, context?: string): string | undefined;
     static SendAndResponse(client: Client.ClientProxy, pattern: string, data: any): Promise<any>;
     static ParseBool(value: any, defaultValue?: boolean): any;
+    static ResponseDataLabels: {
+        totalDocs: string;
+        docs: string;
+        limit: string;
+        page: string;
+        nextPage: string;
+        prevPage: string;
+        totalPages: string;
+        pagingCounter: string;
+        meta: string;
+    };
     /**
      * Преобразование значений в логическое
      * @param {any} value
