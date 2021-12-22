@@ -4,6 +4,44 @@ declare namespace Company {
    */
   export type Ownership = 'ООО' | 'ИП' | 'ОАО';
 
+  export type FuelCustomer = 'Нет' | 'Розница' | 'Опт' | 'Заправка техники';
+  export type FuelSupplier = 'Нет' | 'Трейдер' | 'ВИНК';
+
+  export type VehicleType =
+    | 'Нет'
+    | 'Поставщик зап. частей'
+    | 'Автосервис'
+    | 'Автомойка'
+    | 'Шиномонтаж';
+
+  export type FinanceOrganization =
+    | 'Нет'
+    | 'Банки'
+    | 'Лизинговые'
+    | 'Факторинговые'
+    | 'Страховые';
+
+  export type Segment =
+    | 'АПК'
+    | 'АЗС'
+    | 'Трейдер'
+    | 'ПП'
+    | 'НГС'
+    | 'СДО'
+    | 'АТП';
+
+  export type DeliveryType = 'Доставкой' | 'Самовывоз' | 'Комбинированно';
+  export type Delay = 'Отсрочка' | 'Предоплата' | 'По факту';
+  export type PaymentMethod =
+    | 'Наличные'
+    | 'Официально'
+    | 'Наличные + официально';
+
+  export type DeliveryProcedure =
+    | 'Запрос пренадлежности'
+    | 'Свободно'
+    | 'Тендер';
+
   export interface Management {
     name: string;
     post: string;
@@ -237,5 +275,52 @@ declare namespace Company {
     bankData: Company.Bank;
   }
 
+  export interface Assets {
+    fuelCustomer: string | Company.FuelCustomer;
+    fuelSupplier: string | Company.FuelSupplier;
+    fuelCarrier: boolean;
+    vehicleType: string | Company.VehicleType;
+    financeOrganization: string | Company.FinanceOrganization;
+    otherGoods: string | null;
+    otherServices: string | null;
+    customerTU: string | null;
+    segment: string | Company.Segment;
+    delivery: string | Company.DeliveryType;
+    vehicle: [];
+    delay: string | Company.Delay;
+    delayDays: number;
+    paymentMethod: string | Company.PaymentMethod;
+    accessControl: boolean;
+  }
+
+  export interface Holding {
+    deliveryProcedure: string | Company.DeliveryProcedure;
+    supplier: any;
+    vehicle: [];
+    delivery: boolean;
+    area: any;
+  }
+
+  export namespace Cars {
+    export interface VehicleData {
+      tractor: any;
+      semitrailer: any;
+    }
+    export interface Vehicle {
+      model: Company.Cars.VehicleData;
+      govNumber: Company.Cars.VehicleData;
+      VIN: Company.Cars.VehicleData;
+      TypeTS: Company.Cars.VehicleData;
+      issueYear: Company.Cars.VehicleData;
+      chassis: Company.Cars.VehicleData;
+      carcase: Company.Cars.VehicleData;
+      color: Company.Cars.VehicleData;
+      enginePower: Company.Cars.VehicleData;
+      maxMass: Company.Cars.VehicleData;
+      curbWeight: Company.Cars.VehicleData;
+      owner: Company.Cars.VehicleData;
+      calibration: Company.Cars.VehicleData;
+    }
+  }
   export class CollectionsCompany implements Company.Requisites.CompanyName {}
 }
