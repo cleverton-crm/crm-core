@@ -109,4 +109,11 @@ export declare class Core {
     static ResponseError(message: string | string[], status: number, errors: string): Promise<Core.Response.Answer> | Core.Response.Error;
     static OperationReadMe(path: string, context?: string): string | undefined;
     static SendAndResponse(client: Client.ClientProxy, pattern: string, data: any): Promise<any>;
+    static ParseBool(value: any, defaultValue?: boolean): any;
+    /**
+     * Преобразование значений в логическое
+     * @param {any} value
+     * @constructor
+     */
+    static GetBoolean(value: any): boolean;
 }

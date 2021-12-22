@@ -213,6 +213,43 @@ export class Core {
 
     return userResponse;
   }
+
+  static ParseBool(value: any, defaultValue: boolean = false) {
+    return (
+      (['true', 'false', true, false].includes(value) && JSON.parse(value)) ||
+      defaultValue
+    );
+  }
+
+  /**
+   * Преобразование значений в логическое
+   * @param {any} value
+   * @constructor
+   */
+  static GetBoolean(value: any) {
+    if (value == null) return false;
+
+    if (typeof value === 'boolean') {
+      if (value === true) return true;
+
+      return false;
+    }
+
+    if (typeof value === 'string') {
+      if (value == '') return false;
+
+      value = value.replace(/^\s+|\s+$/g, '');
+      if (value.toLowerCase() == 'true' || value.toLowerCase() == 'yes')
+        return true;
+
+      value = value.replace(/,/g, '.');
+      value = value.replace(/^\s*\-\s*/g, '-');
+    }
+
+    if (!isNaN(value)) return parseFloat(value) != 0;
+
+    return false;
+  }
 }
 module.exports = Core;
 module.exports.Core = Core;
