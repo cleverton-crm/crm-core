@@ -1,4 +1,4 @@
-declare namespace Company {
+export declare namespace Company {
   /**
    * Формы собственности
    */
