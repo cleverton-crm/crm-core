@@ -7,7 +7,7 @@ declare namespace Company {
   export type FuelCustomer = 'Нет' | 'Розница' | 'Опт' | 'Заправка техники';
   export type FuelSupplier = 'Нет' | 'Трейдер' | 'ВИНК';
 
-  export type VehicleType =
+  export type VehicleEnum =
     | 'Нет'
     | 'Поставщик зап. частей'
     | 'Автосервис'
@@ -38,7 +38,7 @@ declare namespace Company {
     | 'Наличные + официально';
 
   export type DeliveryProcedure =
-    | 'Запрос пренадлежности'
+    | 'Запрос принадлежности'
     | 'Свободно'
     | 'Тендер';
 
@@ -227,6 +227,7 @@ declare namespace Company {
       okved_type: string;
       employee_count: number | string | null;
     }
+
     /**
      * Реквизиты компании
      * Информация берется по запросу сайта. Поиск по названию или ИНН
@@ -275,37 +276,47 @@ declare namespace Company {
     bankData: Company.Bank;
   }
 
-  export interface Assets {
-    fuelCustomer: string | Company.FuelCustomer;
-    fuelSupplier: string | Company.FuelSupplier;
-    fuelCarrier: boolean;
-    vehicleType: string | Company.VehicleType;
-    financeOrganization: string | Company.FinanceOrganization;
-    otherGoods: string | null;
-    otherServices: string | null;
-    customerTU: string | null;
-    segment: string | Company.Segment;
-    delivery: string | Company.DeliveryType;
-    vehicle: [];
-    delay: string | Company.Delay;
-    delayDays: number;
-    paymentMethod: string | Company.PaymentMethod;
-    accessControl: boolean;
+  export namespace Actives {
+    export interface Assets {
+      fuelCustomer: string | Company.FuelCustomer;
+      fuelSupplier: string | Company.FuelSupplier;
+      fuelCarrier: boolean;
+      vehicleType: string | Company.VehicleEnum;
+      financeOrganization: string | Company.FinanceOrganization;
+      otherGoods: string | null;
+      otherServices: string | null;
+      customerTU: string | null;
+      segment: string | Company.Segment;
+      delivery: string | Company.DeliveryType;
+      vehicles: any[];
+      delay: string | Company.Delay;
+      delayDays: number;
+      paymentMethod: string | Company.PaymentMethod;
+      accessControl: boolean;
+    }
+  }
+  export namespace Holding {
+    export interface Stage {
+      deliveryProcedure: string | Company.DeliveryProcedure;
+      supplier: any;
+      vehicles: any[];
+      delivery: boolean;
+      area: any;
+    }
   }
 
-  export interface Holding {
-    deliveryProcedure: string | Company.DeliveryProcedure;
-    supplier: any;
-    vehicle: [];
-    delivery: boolean;
-    area: any;
-  }
-
+  /**
+   * Техника компании
+   */
   export namespace Cars {
     export interface VehicleData {
       tractor: any;
       semitrailer: any;
     }
+
+    /**
+     * Модель техники компании
+     */
     export interface Vehicle {
       model: Company.Cars.VehicleData;
       govNumber: Company.Cars.VehicleData;
@@ -322,5 +333,9 @@ declare namespace Company {
       calibration: Company.Cars.VehicleData;
     }
   }
+
   export class CollectionsCompany implements Company.Requisites.CompanyName {}
+  export class CollectionsActives implements Company.Actives.Assets {}
+  export class CollectionsHolding implements Company.Holding.Stage {}
+  export class CollectionsCars implements Company.Cars.Vehicle {}
 }
