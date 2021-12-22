@@ -1,3 +1,8 @@
+/// <reference path="../types/company.d.ts" />
+/// <reference path="../types/clients.d.ts" />
+/// <reference path="../types/personal.d.ts" />
+/// <reference path="../types/profiles.d.ts" />
+/// <reference types="node" />
 import { firstValueFrom, Observable } from 'rxjs';
 import { HttpException, HttpStatus } from '@nestjs/common';
 export namespace Core {

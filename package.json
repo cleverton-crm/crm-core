@@ -20,8 +20,8 @@
   },
   "files": [
     "core/index.js",
-    "types/**/*"
-
+    "types/company.d.ts",
+    "types/clients.d.ts"
   ],
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
   },
   "license": "MIT",
   "main": "./core/index.js",
-  "module": "index.js",
+  "module": "crm-core",
   "types": "./core/index.d.ts",
   "bugs": {
     "url": "https://github.com/cleverton-crm/crm-core.git"

@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Core = exports.Client = void 0;
+/// <reference path="../types/company.d.ts" />
+/// <reference path="../types/clients.d.ts" />
+/// <reference path="../types/personal.d.ts" />
+/// <reference path="../types/profiles.d.ts" />
+/// <reference types="node" />
 const rxjs_1 = require("rxjs");
 const common_1 = require("@nestjs/common");
 var Client;
