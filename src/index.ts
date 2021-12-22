@@ -7,6 +7,21 @@ export namespace Core {
    * Core.Response.Data - используется при правильном ответе с данными
    */
   export namespace Response {
+    export interface RecordLabels {
+      totalDocs: 'totalPages';
+      docs: 'data';
+      limit: 'perPage';
+      page: 'currentPage';
+      nextPage: 'next';
+      prevPage: 'prev';
+      totalPages: 'pageCount';
+      pagingCounter: 'slNo';
+      meta: 'records';
+    }
+
+    /**
+     *
+     */
     export interface Data {
       statusCode: number;
       message: string | Object;
@@ -220,6 +235,18 @@ export class Core {
       defaultValue
     );
   }
+
+  static ResponseDataLabels = {
+    totalDocs: 'totalPages',
+    docs: 'data',
+    limit: 'perPage',
+    page: 'currentPage',
+    nextPage: 'next',
+    prevPage: 'prev',
+    totalPages: 'pageCount',
+    pagingCounter: 'slNo',
+    meta: 'records',
+  };
 
   /**
    * Преобразование значений в логическое

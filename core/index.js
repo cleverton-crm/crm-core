@@ -110,6 +110,17 @@ class Core {
 }
 exports.Core = Core;
 Core.logger = new Logger();
+Core.ResponseDataLabels = {
+    totalDocs: 'totalPages',
+    docs: 'data',
+    limit: 'perPage',
+    page: 'currentPage',
+    nextPage: 'next',
+    prevPage: 'prev',
+    totalPages: 'pageCount',
+    pagingCounter: 'slNo',
+    meta: 'records',
+};
 module.exports = Core;
 module.exports.Core = Core;
 module.exports.default = Core;
