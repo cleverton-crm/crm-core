@@ -43,10 +43,19 @@ declare module 'crm-core' {
       | 'Свободно'
       | 'Тендер';
 
+    export interface Persona {
+      surname?: string | null;
+      name?: string | null;
+      patronymic?: string | null;
+      gender?: string | null;
+      source?: string | null;
+      qc?: string | null;
+    }
+
     export interface Management {
-      name: string;
-      post: string;
-      disqualified: string | null;
+      name?: string;
+      post?: string;
+      disqualified?: string | null;
     }
 
     /**
@@ -59,44 +68,44 @@ declare module 'crm-core' {
        *  Статус компании
        */
       export interface State {
-        status: string;
-        code: string | number | null;
-        actuality_date: number;
-        registration_date: number;
-        liquidation_date: number | Date | null;
+        status?: string;
+        code?: string | number | null;
+        actuality_date?: number;
+        registration_date?: number;
+        liquidation_date?: number | Date | null;
       }
 
       /**
        * ОРФ  компании
        */
       export interface OPF {
-        type: string;
-        code: string;
-        full: string;
-        short: string;
+        type?: string;
+        code?: string;
+        full?: string;
+        short?: string;
       }
 
       /**
        * Название компании
        */
       export interface Name {
-        full_with_opf: string;
-        short_with_opf: string;
-        latin: string | null;
-        full: string;
-        short: string;
+        full_with_opf?: string;
+        short_with_opf?: string;
+        latin?: string | null;
+        full?: string;
+        short?: string;
       }
 
       /**
        * Детальная информация о местоположении компании
        */
       export interface Info {
-        postal_code: string;
-        country: string;
-        country_iso_code: string;
-        federal_district: string;
-        region_fias_id: string;
-        region_kladr_id: string;
+        postal_code?: string;
+        country?: string;
+        country_iso_code?: string;
+        federal_district?: string;
+        region_fias_id?: string;
+        region_kladr_id?: string;
         region_iso_code: string;
         region_with_type: string;
         region_type: string;
@@ -192,12 +201,14 @@ declare module 'crm-core' {
        *  О компании и ее реквизиты
        */
       export interface CompanyUs {
-        kpp: string;
-        capital: string | null;
-        management: Company.Management;
-        founders: string | null;
-        managers: string | null;
-        predecessors: string | null;
+        kpp?: string;
+        capital?: string | null;
+        citizenship?: string | null;
+        fio?: Company.Persona;
+        management?: Company.Management;
+        founders?: string | null;
+        managers?: string | null;
+        predecessors?: string | null;
         successors: string | null;
         branch_type: string;
         branch_count: number;
@@ -235,7 +246,6 @@ declare module 'crm-core' {
        * @see https://dadata.ru/api/suggest/party/
        */
       export interface CompanyName {
-        companyId: string;
         value: string;
         unrestricted_value: string;
         data: Company.Requisites.CompanyUs;
@@ -264,7 +274,7 @@ declare module 'crm-core' {
       source: string;
       name: string;
       ownership: string | Company.Ownership;
-      client: Array<string>;
+      clients: Array<string>;
       phoneNumber: string;
       factLocation: string;
       companyLocation: string;
@@ -275,6 +285,8 @@ declare module 'crm-core' {
       web: string;
       requisites: Company.Requisites.CompanyName;
       bankData: Company.Bank;
+      actives: Company.Actives.Assets;
+      vehicles: Array<string>;
     }
 
     export namespace Actives {
@@ -289,7 +301,6 @@ declare module 'crm-core' {
         customerTU: string | null;
         segment: string | Company.Segment;
         delivery: string | Company.DeliveryType;
-        vehicles: any[];
         delay: string | Company.Delay;
         delayDays: number;
         paymentMethod: string | Company.PaymentMethod;
@@ -319,6 +330,7 @@ declare module 'crm-core' {
        * Модель техники компании
        */
       export interface Vehicle {
+        companyId: string;
         model: Company.Cars.VehicleData;
         govNumber: Company.Cars.VehicleData;
         VIN: Company.Cars.VehicleData;
