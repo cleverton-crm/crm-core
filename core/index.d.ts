@@ -179,7 +179,7 @@ declare module 'crm-core' {
       client: Client.ClientProxy,
       pattern: string,
       data: any,
-    ): Promise<any>;
+    ): Promise<Core.Response.Answer>;
 
     static ParseBool(value: any, defaultValue?: boolean): any;
 

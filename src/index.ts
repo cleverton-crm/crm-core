@@ -236,7 +236,7 @@ export class Core {
     client: Client.ClientProxy,
     pattern: string,
     data: any,
-  ) {
+  ): Promise<Core.Response.Answer> {
     const userResponse = await firstValueFrom(client.send(pattern, data));
 
     if (userResponse.statusCode !== 200) {
