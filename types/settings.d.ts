@@ -4,16 +4,24 @@ declare module 'crm-core' {
      * Настройки
      */
     export namespace Settings {
+      /** Типы данных*/
+      export type ValueType = 'String' | 'Number' | 'Map' | 'Array' | 'Boolean';
       /**
        * Модель настроек
        */
       export interface Schema {
-        type: string;
+        object: string; // Объект
+        type: string; // Тип данных
         name: string;
-        values: string;
+        vString: string;
+        vNumber: number;
+        vBoolean: boolean;
+        vArray: Array;
+        vMap: Map<string, any>;
       }
 
       export interface Filter {
+        object: string;
         type: string;
         name: string;
       }
@@ -30,12 +38,18 @@ declare module 'crm-core' {
        * Модель справочника
        */
       export interface Schema {
-        type: string;
+        object: string; // Объект
+        type: string; // Тип данных
         name: string;
-        values: string;
+        vString: string;
+        vNumber: number;
+        vBoolean: boolean;
+        vArray: Array;
+        vMap: Map<string, any>;
       }
 
       export interface Filter {
+        object: string;
         type: string;
         name: string;
       }
