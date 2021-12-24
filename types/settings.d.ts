@@ -22,9 +22,10 @@ declare module 'crm-core' {
       }
 
       export interface Filter {
-        object: string;
-        type: string;
-        name: string;
+        object?: string;
+        type?: string;
+        name?: string;
+        property?: string;
       }
     }
     export class Settings {
@@ -51,9 +52,10 @@ declare module 'crm-core' {
       }
 
       export interface Filter {
-        object: string;
-        type: string;
-        name: string;
+        object?: string;
+        type?: string;
+        name?: string;
+        property?: string;
       }
     }
     export class Guides {
