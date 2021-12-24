@@ -18,21 +18,44 @@ class Core {
      * Async Response Data
      * @param {String} message
      * @param {any} data
+     * @param status
+     * @param isError
+     * @param errorStatus
      * @constructor
      */
-    static async ResponseDataAsync(message, data) {
-        return {
-            statusCode: 200,
-            message: message,
-            data: data,
-        };
+    static async ResponseDataAsync(message, data, status = 200, isError = false, errorStatus = '') {
+        if (isError) {
+            return {
+                statusCode: status,
+                message: message,
+                error: errorStatus,
+                data: null,
+            };
+        }
+        else {
+            return {
+                statusCode: status,
+                message: message,
+                data: data,
+            };
+        }
     }
-    static ResponseData(message, data) {
-        return {
-            statusCode: 200,
-            message: message,
-            data: data,
-        };
+    static ResponseData(message, data, status = 200, isError = false, errorStatus = '') {
+        if (isError) {
+            return {
+                statusCode: status,
+                message: message,
+                error: errorStatus,
+                data: null,
+            };
+        }
+        else {
+            return {
+                statusCode: 200,
+                message: message,
+                data: data,
+            };
+        }
     }
     static ResponseSuccess(message, status = 200) {
         return {

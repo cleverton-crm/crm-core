@@ -135,25 +135,55 @@ export class Core {
    * Async Response Data
    * @param {String} message
    * @param {any} data
+   * @param status
+   * @param isError
+   * @param errorStatus
    * @constructor
    */
   static async ResponseDataAsync(
     message: string | Object,
     data: any,
+    status: number = 200,
+    isError: boolean = false,
+    errorStatus: string = '',
   ): Promise<Core.Response.Answer> {
-    return {
-      statusCode: 200,
-      message: message,
-      data: data,
-    };
+    if (isError) {
+      return {
+        statusCode: status,
+        message: message,
+        error: errorStatus,
+        data: null,
+      };
+    } else {
+      return {
+        statusCode: status,
+        message: message,
+        data: data,
+      };
+    }
   }
 
-  static ResponseData(message: string | Object, data: any): Core.Response.Data {
-    return {
-      statusCode: 200,
-      message: message,
-      data: data,
-    };
+  static ResponseData(
+    message: string | Object,
+    data: any,
+    status: number = 200,
+    isError: boolean = false,
+    errorStatus: string = '',
+  ): Core.Response.Answer {
+    if (isError) {
+      return {
+        statusCode: status,
+        message: message,
+        error: errorStatus,
+        data: null,
+      };
+    } else {
+      return {
+        statusCode: 200,
+        message: message,
+        data: data,
+      };
+    }
   }
 
   static ResponseSuccess(
