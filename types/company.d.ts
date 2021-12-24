@@ -295,6 +295,14 @@ declare module 'crm-core' {
       }
     }
 
+    /**
+     * Интерфейс для архивирования компании
+     */
+    export interface ArchiveData {
+      id: string;
+      active: boolean;
+    }
+
     export class Company {
       static Company: typeof Company;
     }
