@@ -13,11 +13,11 @@ declare module 'crm-core' {
         object: string; // Объект
         type: string; // Тип данных
         name: string;
-        vString: string;
-        vNumber: number;
-        vBoolean: boolean;
-        vArray: Array;
-        vMap: Map<string, any>;
+        vString?: string;
+        vNumber?: number;
+        vBoolean?: boolean;
+        vArray?: Array;
+        vMap?: Map<string, any>;
       }
 
       export interface Filter {
@@ -41,11 +41,11 @@ declare module 'crm-core' {
         object: string; // Объект
         type: string; // Тип данных
         name: string;
-        vString: string;
-        vNumber: number;
-        vBoolean: boolean;
-        vArray: Array;
-        vMap: Map<string, any>;
+        vString?: string;
+        vNumber?: number;
+        vBoolean?: boolean;
+        vArray?: Array;
+        vMap?: Map<string, any>;
       }
 
       export interface Filter {
