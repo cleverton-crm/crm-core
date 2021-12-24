@@ -13,6 +13,7 @@ declare module 'crm-core' {
         object: string; // Объект
         type: string; // Тип данных
         name: string;
+        property: string;
         vString?: string;
         vNumber?: number;
         vBoolean?: boolean;
@@ -41,6 +42,7 @@ declare module 'crm-core' {
         object: string; // Объект
         type: string; // Тип данных
         name: string;
+        property: string;
         vString?: string;
         vNumber?: number;
         vBoolean?: boolean;
