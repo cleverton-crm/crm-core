@@ -276,6 +276,7 @@ declare module 'crm-core' {
         /** Тип объекта */
         object: 'company';
 
+        active: boolean;
         permissions: string;
         tags: Array<string>;
         source: string;
@@ -293,18 +294,13 @@ declare module 'crm-core' {
         requisites: Core.Company.Requisites.CompanyName;
       }
 
-      export class CompanySchema implements Company.Requisites.CompanyName {
-        companyId: string;
-        value: string;
-        unrestricted_value?: string;
-        data: Company.Requisites.CompanyUs;
+      /**
+       * Интерфейс для архивирования компании
+       */
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
       }
-
-      export class CompanyActives implements Company.Actives.Assets {}
-
-      export class CompanyHolding implements Company.Holding.Stage {}
-
-      export class CompanyCars implements Company.Cars.Vehicle {}
     }
 
     export class Company {
