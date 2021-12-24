@@ -293,14 +293,14 @@ declare module 'crm-core' {
         web: string;
         requisites: Core.Company.Requisites.CompanyName;
       }
-    }
 
-    /**
-     * Интерфейс для архивирования компании
-     */
-    export interface ArchiveData {
-      id: string;
-      active: boolean;
+      /**
+       * Интерфейс для архивирования компании
+       */
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
+      }
     }
 
     export class Company {
