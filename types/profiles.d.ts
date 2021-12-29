@@ -1,10 +1,15 @@
 declare module 'crm-core' {
+  /**
+   * Основное ядро Пользователя
+   * Все типы и настройки
+   */
   export namespace Core {
+    /** Профиль пользователя универсальный */
     declare namespace Profiles {
       export interface Object {
         [key: string]: any;
       }
-
+      /** Адрес пользователя */
       export interface Address {
         state?: string;
         country?: string;
@@ -14,7 +19,7 @@ declare module 'crm-core' {
         zip?: string;
         timezone?: string;
       }
-
+      /** Статус пользователя */
       export namespace Capabilities {
         export type PersonaStatus = 'active' | 'inactive' | 'banned';
       }
@@ -36,27 +41,30 @@ declare module 'crm-core' {
         married = 'married',
         divorced = 'divorced',
       }
-
+      /** Паспортные данные */
       export interface Passport extends Object {
         series: string;
         number: string;
         dateOfIssue: Date;
       }
 
+      /** Водительсокое удостоверение */
       export interface DriverLicense extends Object {
         number: string;
         dateOfIssue: Date;
         endDate: Date;
       }
 
+      /** Реквизиты пользователя???? */
       export interface Requisites extends Object {
         inn: string;
         invoiceNumber: string; // Номер счета
       }
 
+      /** Персональные данные */
       export interface PersonalDocument {
-        passport: Profiles.Passport;
-        driver_license: Profiles.DriverLicense;
+        passport: Core.Profiles.Passport;
+        driver_license: Core.Profiles.DriverLicense;
       }
 
       /**
@@ -69,16 +77,16 @@ declare module 'crm-core' {
         lastName: string | null;
         maidenName?: string | null;
         nickName?: string | null;
-        gender?: string | Profiles.Gender;
+        gender?: string | Cor.Profiles.Gender;
         birthDate?: Date;
-        relationship?: string | Profiles.Relationship;
+        relationship?: string | Core.Profiles.Relationship;
         about?: string | null;
-        status?: string | Profiles.Capabilities.PersonaStatus;
+        status?: string | Core.Profiles.Capabilities.PersonaStatus;
         language?: string | null;
         speakLanguage?: Array<string>;
         email?: string | null;
         avatar?: Map<string, any>;
-        address?: Map<string, any> | Profiles.Address;
+        address?: Map<string, any> | Core.Profiles.Address;
         object: 'profile';
         type: 'member';
         skills?: Map<string, any>;
@@ -102,7 +110,7 @@ declare module 'crm-core' {
 
       export class PersonaSchema implements Profiles.Persona {
         object: 'profile';
-        status: string | Profiles.Capabilities.PersonaStatus;
+        status: string | Core.Profiles.Capabilities.PersonaStatus;
         type: string;
         email: string | null;
         owner: string;
@@ -113,10 +121,10 @@ declare module 'crm-core' {
         maidenName: string | null;
         about: string | null;
         birthDate: Date;
-        address: Map<string, any> | Profiles.Address;
+        address: Map<string, any> | Core.Profiles.Address;
         avatar: Map<string, any>;
-        gender: string | Profiles.Gender;
-        relationship: string | Profiles.Relationship;
+        gender: string | Core.Profiles.Gender;
+        relationship: string | Core.Profiles.Relationship;
         language: string | null;
         speakLanguage: Array<string>;
         customer: string;
@@ -139,20 +147,21 @@ declare module 'crm-core' {
       export namespace Personal {
         export type PersonalType = 'Manager' | 'Admin';
 
+        /** Персонал управления  */
         export interface Member {
           owner: string;
           object: 'profile';
-          type: string | Profiles.Personal.PersonalType;
+          type: string | Core.Profiles.Personal.PersonalType;
           firstName: string | null;
           lastName: string | null;
           middleName?: string | null;
           phoneNumber: string;
           birthDate: Date;
           startDate: Date; // Дата начала работы
-          passport: Profiles.PersonalDocument;
+          passport: Core.Profiles.PersonalDocument;
           email: string | null;
-          address: Map<string, any> | Profiles.Address;
-          requisites: Profiles.Personal.Requisites;
+          address: Map<string, any> | Core.Profiles.Address;
+          requisites: Map<string, any> | Core.Profiles.Personal.Requisites;
         }
       }
 
