@@ -40,7 +40,7 @@ declare module 'crm-core' {
         email: string;
         emailCompany: string;
         socials: Map<string, string>;
-        voices: Core.Client.SocialVoices;
+        voices: Map<string, string> | Core.Client.SocialVoices;
         birthDate: Date;
         comments: Map<string, string>;
         attachments: Map<string, string>;
