@@ -29,6 +29,7 @@ declare module 'crm-core' {
         last: string;
         middle: string;
         owner: string;
+        active: boolean;
         payerType: string | Core.Client.PayerType;
         permissions: Map<string, any>;
         createData: Date;
@@ -43,6 +44,11 @@ declare module 'crm-core' {
         birthDate: Date;
         comments: Map<string, string>;
         attachments: Map<string, string>;
+      }
+
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
       }
 
       /**
