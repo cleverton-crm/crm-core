@@ -1,6 +1,6 @@
 declare module 'crm-core' {
   export namespace Core {
-    declare namespace Client {
+    export namespace Client {
       /**
        * Тип плательщика
        */

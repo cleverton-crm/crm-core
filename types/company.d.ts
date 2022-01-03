@@ -2,7 +2,7 @@ import { Company } from 'crm-core';
 
 declare module 'crm-core' {
   export namespace Core {
-    export declare namespace Company {
+    export namespace Company {
       /**
        * Формы собственности
        */

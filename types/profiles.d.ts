@@ -5,7 +5,7 @@ declare module 'crm-core' {
    */
   export namespace Core {
     /** Профиль пользователя универсальный */
-    declare namespace Profiles {
+    export namespace Profiles {
       export interface Object {
         [key: string]: any;
       }
