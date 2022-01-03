@@ -77,7 +77,7 @@ declare module 'crm-core' {
         lastName: string | null;
         maidenName?: string | null;
         nickName?: string | null;
-        gender?: string | Cor.Profiles.Gender;
+        gender?: string | Core.Profiles.Gender;
         birthDate?: Date;
         relationship?: string | Core.Profiles.Relationship;
         about?: string | null;
