@@ -112,19 +112,6 @@ declare module 'crm-core' {
       }
     }
   }
-  export declare namespace Client {
-    class ClientProxy {
-      send<TResult = any, TInput = any>(
-        pattern: any,
-        data: TInput,
-      ): Observable<TResult>;
-
-      emit<TResult = any, TInput = any>(
-        pattern: any,
-        data: TInput,
-      ): Observable<TResult>;
-    }
-  }
 
   export declare class Core {
     private static logger;
@@ -174,12 +161,6 @@ declare module 'crm-core' {
     ): Promise<Core.Response.Answer> | Core.Response.Error;
 
     static OperationReadMe(path: string, context?: string): string | undefined;
-
-    static SendAndResponse(
-      client: Client.ClientProxy,
-      pattern: string,
-      data: any,
-    ): Promise<any>;
 
     static ParseBool(value: any, defaultValue?: boolean): any;
 
