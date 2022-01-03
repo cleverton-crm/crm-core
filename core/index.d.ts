@@ -8,7 +8,7 @@
 
 import { Observable } from 'rxjs';
 declare module 'crm-core' {
-  export declare namespace Core {
+  export namespace Core {
     /**
      * Response Core Api
      * Core.Response.Data - используется при правильном ответе с данными

@@ -1,5 +1,3 @@
-import { Company } from 'crm-core';
-
 declare module 'crm-core' {
   export namespace Core {
     export namespace Company {
