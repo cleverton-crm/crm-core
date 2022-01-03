@@ -6,7 +6,6 @@
 /// <reference path="../types/settings.d.ts" />
 /// <reference path="../types/deals.d.ts" />
 
-import { Observable } from 'rxjs';
 declare module 'crm-core' {
   export namespace Core {
     /**
@@ -113,7 +112,7 @@ declare module 'crm-core' {
     }
   }
 
-  export declare class Core {
+  export class Core {
     private static logger;
     static Core: typeof Core;
 
