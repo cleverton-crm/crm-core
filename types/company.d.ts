@@ -1,3 +1,5 @@
+import { Clear } from "crm-core";
+
 declare module 'crm-core' {
   export namespace Core {
     export namespace Company {
@@ -272,15 +274,13 @@ declare module 'crm-core' {
       /**
        * Схема хранения данных в базе
        */
-      export interface Schema {
-        _id?: string;
-        id?: string;
+      export interface Clear {
         /** Ответсвенный */
         owner: string;
-
+  
         /** Тип объекта */
         object: 'company';
-
+  
         active: boolean;
         permissions: string;
         tags: Array<string>;
@@ -297,6 +297,11 @@ declare module 'crm-core' {
         employeesCount?: number;
         web?: string;
         requisites?: Core.Company.Requisites.CompanyName;
+      }
+      
+      export interface Schema extends Clear {
+        _id?: string;
+        id?: string;
       }
 
       /**
