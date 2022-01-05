@@ -280,8 +280,6 @@ declare module 'crm-core' {
   
         /** Тип объекта */
         object: 'company';
-  
-        active: boolean;
         permissions: string;
         tags: Array<string>;
         source: string;
@@ -302,6 +300,7 @@ declare module 'crm-core' {
       export interface Schema extends Clear {
         _id?: string;
         id?: string;
+        active: boolean;
       }
 
       /**
