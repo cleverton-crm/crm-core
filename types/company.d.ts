@@ -268,8 +268,8 @@ declare module 'crm-core' {
        * Схема хранения данных в базе
        */
       export interface Schema {
-        _id: string;
-        id: string;
+        _id?: string;
+        id?: string;
         /** Ответсвенный */
         owner: string;
 
