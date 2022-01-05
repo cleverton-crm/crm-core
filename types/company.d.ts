@@ -269,6 +269,7 @@ declare module 'crm-core' {
        */
       export interface Schema {
         _id: string;
+        id: string;
         /** Ответсвенный */
         owner: string;
 
