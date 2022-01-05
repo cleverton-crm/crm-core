@@ -31,6 +31,8 @@ declare module 'crm-core' {
         female = 'Female',
       }
 
+      export type PersonalType = 'Manager' | 'Admin';
+
       /**
        * Status Relationship
        */
@@ -55,6 +57,10 @@ declare module 'crm-core' {
         endDate: Date;
       }
 
+      export interface Requisites {
+        serial: string;
+      }
+
       /** Реквизиты пользователя???? */
       export interface Requisites extends Object {
         inn: string;
@@ -70,7 +76,7 @@ declare module 'crm-core' {
       /**
        * Basic fields for a profile
        */
-      export interface Persona {
+      export interface Schema {
         owner: string;
         title: string;
         firstName: string | null;
@@ -86,71 +92,20 @@ declare module 'crm-core' {
         speakLanguage?: Array<string>;
         email?: string | null;
         avatar?: Map<string, any>;
-        address?: Map<string, any> | Core.Profiles.Address;
         object: 'profile';
         type: 'member';
-        skills?: Map<string, any>;
-        works?: Map<string, any>;
-        certificates?: Map<string, any>;
-        experience?: Map<string, any>;
         socials?: Map<string, any>;
-        customer?: string;
-        orders?: Map<string, any>;
-        worksExperience?: Map<string, any>;
-        worksTitle?: string;
-        calendar?: Map<string, any>;
-        specialty?: Map<string, any>;
-        disorders?: Map<string, any>;
-        cards?: string;
-
-        passport: Profiles.PersonalDocument;
+        passport: Core.Profiles.PersonalDocument;
+        address: Map<string, any> | Core.Profiles.Address;
+        requisites: Map<string, any> | Core.Profiles.Requisites;
       }
 
       export class AddressType implements Profiles.Address {}
-
-      export class PersonaSchema implements Profiles.Persona {
-        object: 'profile';
-        status: string | Core.Profiles.Capabilities.PersonaStatus;
-        type: string;
-        email: string | null;
-        owner: string;
-        title: string;
-        nickName: string;
-        firstName: string | null;
-        lastName: string | null;
-        maidenName: string | null;
-        about: string | null;
-        birthDate: Date;
-        address: Map<string, any> | Core.Profiles.Address;
-        avatar: Map<string, any>;
-        gender: string | Core.Profiles.Gender;
-        relationship: string | Core.Profiles.Relationship;
-        language: string | null;
-        speakLanguage: Array<string>;
-        customer: string;
-        skills?: Map<string, any>;
-        works?: Map<string, any>;
-        certificates?: Map<string, any>;
-        experience?: Map<string, any>;
-        calendar: Map<string, any>;
-        cards: string;
-        disorders: Map<string, any>;
-        socials: Map<string, any>;
-        specialty: Map<string, any>;
-        worksExperience: Map<string, any>;
-        worksTitle: string;
-      }
 
       /**
        * Персонал логистической компании
        */
       export namespace Personal {
-        export type PersonalType = 'Manager' | 'Admin';
-
-        export interface Requisites {
-
-        }
-
         /** Персонал управления  */
         export interface Member {
           owner: string;
