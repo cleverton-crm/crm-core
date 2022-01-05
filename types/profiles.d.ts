@@ -1,3 +1,5 @@
+import { Object } from 'crm-core';
+
 declare module 'crm-core' {
   /**
    * Основное ядро Пользователя
@@ -57,14 +59,30 @@ declare module 'crm-core' {
         endDate: Date;
       }
 
-      export interface Requisites {
-        serial: string;
-      }
-
-      /** Реквизиты пользователя???? */
       export interface Requisites extends Object {
+        /** Дебетовая карта*/
+        card: string;
+
+        /** ИИН */
         inn: string;
-        invoiceNumber: string; // Номер счета
+
+        /** СНИЛС */
+        snils: string;
+
+        /** БИК */
+        bik: string;
+
+        /** Банк счета*/
+        bank: string;
+
+        /** ИНН Банка */
+        innBank: string;
+
+        /** Расчетный счет */
+        payment: string;
+
+        /** Кор. счет */
+        correspondent: string;
       }
 
       /** Персональные данные */
@@ -77,26 +95,70 @@ declare module 'crm-core' {
        * Basic fields for a profile
        */
       export interface Schema {
+        /** UserID - Принадлежность объекта */
         owner: string;
+
+        /** Обращение к человеку Мистер, Мисс, Товарищ, Сер*/
         title: string;
+
+        /** Имя пользователя */
         firstName: string | null;
+
+        /** Фамилия пользователя  */
         lastName: string | null;
-        maidenName?: string | null;
+
+        /** Отчество пользователя */
+        middleName?: string | null;
+
+        /** Вымышленное имя */
         nickName?: string | null;
+
+        /** Пол пользователя */
         gender?: string | Core.Profiles.Gender;
+
+        /** Дата рождения */
         birthDate?: Date;
+
+        /** Статус: Женат, Замужем и тд. */
         relationship?: string | Core.Profiles.Relationship;
+
+        /** Коротко об пользователе, биография или качества */
         about?: string | null;
+
+        /** Статус: Активный или не активный */
         status?: string | Core.Profiles.Capabilities.PersonaStatus;
+
+        /** Разговорный язык */
         language?: string | null;
+
+        /** На каких языках разговаривает */
         speakLanguage?: Array<string>;
+
+        /** Дополнительный емайл */
         email?: string | null;
+
+        /** Телефон */
+        phone?: string | null;
+
+        /** Аватарка пользователя или фотография */
         avatar?: Map<string, any>;
-        object: 'profile';
-        type: 'member';
+
+        /**  Объект - его определение, к чему относятся данные */
+        object: string | 'profile';
+
+        /** Тип профиля*/
+        type: string | 'member';
+
+        /** Линки на социальные сети */
         socials?: Map<string, any>;
+
+        /** Паспортные данные */
         passport: Core.Profiles.PersonalDocument;
+
+        /** Фактический адрес проживания */
         address: Map<string, any> | Core.Profiles.Address;
+
+        /** Платежные реквизиты */
         requisites: Map<string, any> | Core.Profiles.Requisites;
       }
 
