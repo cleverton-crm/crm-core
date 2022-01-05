@@ -264,6 +264,11 @@ declare module 'crm-core' {
         payment: string;
       }
 
+      export interface CompanyUpdateData {
+        id: string;
+        data: Core.Company.Schema;
+      }
+
       /**
        * Схема хранения данных в базе
        */
