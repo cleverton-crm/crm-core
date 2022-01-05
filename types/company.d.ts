@@ -264,7 +264,7 @@ declare module 'crm-core' {
         payment: string;
       }
 
-      export interface CompanyUpdateData {
+      export interface UpdateData {
         id: string;
         data: Core.Company.Schema;
       }
