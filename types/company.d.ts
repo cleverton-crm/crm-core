@@ -210,35 +210,35 @@ declare module 'crm-core' {
           founders?: string | null;
           managers?: string | null;
           predecessors?: string | null;
-          successors: string | null;
-          branch_type: string;
-          branch_count: number;
+          successors?: string | null;
+          branch_type?: string;
+          branch_count?: number;
           source: string | null;
-          qc: string | null;
-          hid: string | null;
-          type: string;
-          state: Core.Company.Requisites.State;
-          opf: Core.Company.Requisites.OPF;
-          name: Core.Company.Requisites.Name;
-          inn: string;
-          ogrn: string;
-          okpo: string;
-          okato: string;
-          oktmo: string;
-          okogu: string;
-          okfs: string;
-          okved: string;
-          okveds: string | null;
-          authorities: string | null;
-          documents: string | null;
-          licenses: string | null;
-          finance: string | null;
-          address: Core.Company.Requisites.Address;
-          phones: string | null;
-          emails: string | null;
-          ogrn_date: number;
-          okved_type: string;
-          employee_count: number | string | null;
+          qc?: string | null;
+          hid?: string | null;
+          type?: string;
+          state?: Core.Company.Requisites.State;
+          opf?: Core.Company.Requisites.OPF;
+          name?: Core.Company.Requisites.Name;
+          inn?: string;
+          ogrn?: string;
+          okpo?: string;
+          okato?: string;
+          oktmo?: string;
+          okogu?: string;
+          okfs?: string;
+          okved?: string;
+          okveds?: string | null;
+          authorities?: string | null;
+          documents?: string | null;
+          licenses?: string | null;
+          finance?: string | null;
+          address?: Core.Company.Requisites.Address;
+          phones?: string | null;
+          emails?: string | null;
+          ogrn_date?: number;
+          okved_type?: string;
+          employee_count?: number | string | null;
         }
 
         /**
@@ -247,9 +247,9 @@ declare module 'crm-core' {
          * @see https://dadata.ru/api/suggest/party/
          */
         export interface CompanyName {
-          value: string;
-          unrestricted_value: string;
-          data: Core.Company.Requisites.CompanyUs;
+          value?: string;
+          unrestricted_value?: string;
+          data?: Core.Company.Requisites.CompanyUs;
         }
       }
 
@@ -281,15 +281,15 @@ declare module 'crm-core' {
         name: string;
         ownership: string | Core.Company.Ownership;
         clients: Array<string>;
-        phoneNumber: string;
-        factLocation: string;
-        companyLocation: string;
-        postLocation: string;
-        fax: string;
-        phones: Array<string>;
-        employeesCount: number;
-        web: string;
-        requisites: Core.Company.Requisites.CompanyName;
+        phoneNumber?: string;
+        factLocation?: string;
+        companyLocation?: string;
+        postLocation?: string;
+        fax?: string;
+        phones?: Array<string>;
+        employeesCount?: number;
+        web?: string;
+        requisites?: Core.Company.Requisites.CompanyName;
       }
 
       /**
@@ -305,6 +305,7 @@ declare module 'crm-core' {
       static Company: typeof Company;
     }
 
+    // Core.Actives.Assets.fuelCustomer
     export namespace Actives {
       export interface Assets {
         fuelCustomer: string | Company.FuelCustomer;
