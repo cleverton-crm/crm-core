@@ -277,9 +277,6 @@ declare module 'crm-core' {
       export interface Clear {
         /** Ответсвенный */
         owner: string;
-  
-        /** Тип объекта */
-        object: 'company';
         permissions: string;
         tags: Array<string>;
         source: string;
@@ -301,6 +298,9 @@ declare module 'crm-core' {
         _id?: string;
         id?: string;
         active: boolean;
+  
+        /** Тип объекта */
+        object: 'company';
       }
 
       /**
