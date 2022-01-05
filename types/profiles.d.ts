@@ -147,6 +147,10 @@ declare module 'crm-core' {
       export namespace Personal {
         export type PersonalType = 'Manager' | 'Admin';
 
+        export interface Requisites {
+
+        }
+
         /** Персонал управления  */
         export interface Member {
           owner: string;
