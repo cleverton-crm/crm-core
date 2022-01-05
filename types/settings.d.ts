@@ -10,14 +10,34 @@ declare module 'crm-core' {
        * Модель настроек
        */
       export interface Schema {
-        object: string; // Объект
-        type: string; // Тип данных
+        /** Объект - принадлежность к объекту данных в коллекциях */
+        object: string;
+
+        /** Тип данных - задает параметры данных: string == vString, number == vNumber и тд. */
+        type: string;
+
+        /** Описание поля с данными */
         name: string;
+
+        /** Название поля на английском */
         property: string;
+
+        /** Тип данных Строка */
         vString?: string;
+
+        /** Тип данных номер */
         vNumber?: number;
+
+        /** Тип данных логические */
         vBoolean?: boolean;
+
+        /** Тип данных массив */
         vArray?: Array;
+
+        /**
+         * Тип данных универсальный Map
+         * Возможность использования в широком спектре
+         */
         vMap?: Map<string, any>;
       }
 
