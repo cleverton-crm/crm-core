@@ -165,6 +165,68 @@ declare module 'crm-core' {
         requisites: Map<string, any> | Core.Profiles.Requisites;
       }
 
+      export interface Update {
+        _id?: string;
+        id?: string;
+
+        /** Обращение к человеку Мистер, Мисс, Товарищ, Сер*/
+        title?: string;
+
+        /** Имя пользователя */
+        firstName?: string | null;
+
+        /** Фамилия пользователя  */
+        lastName?: string | null;
+
+        /** Отчество пользователя */
+        middleName?: string | null;
+
+        /** Вымышленное имя */
+        nickName?: string | null;
+
+        /** Пол пользователя */
+        gender?: string | Core.Profiles.Gender;
+
+        /** Дата рождения */
+        birthDate?: Date;
+
+        /** Статус: Женат, Замужем и тд. */
+        relationship?: string | Core.Profiles.Relationship;
+
+        /** Коротко об пользователе, биография или качества */
+        about?: string | null;
+
+        /** Статус: Активный или не активный */
+        status?: string | Core.Profiles.Capabilities.PersonaStatus;
+
+        /** Разговорный язык */
+        language?: string | null;
+
+        /** На каких языках разговаривает */
+        speakLanguage?: Array<string>;
+
+        /** Дополнительный емайл */
+        email?: string | null;
+
+        /** Телефон */
+        phone?: string | null;
+
+        /** Аватарка пользователя или фотография */
+        avatar?: Map<string, any>;
+
+        /** Линки на социальные сети */
+        socials?: Map<string, any>;
+
+        /** Паспортные данные */
+        passport?: Core.Profiles.PersonalDocument;
+
+        /** Фактический адрес проживания */
+        address?: Map<string, any> | Core.Profiles.Address;
+
+        /** Платежные реквизиты */
+        requisites?: Map<string, any> | Core.Profiles.Requisites;
+      }
+
       export class AddressType implements Profiles.Address {}
 
       /**
