@@ -1,4 +1,4 @@
-import { Clear } from "crm-core";
+import { Clear } from 'crm-core';
 
 declare module 'crm-core' {
   export namespace Core {
@@ -275,32 +275,64 @@ declare module 'crm-core' {
        * Схема хранения данных в базе
        */
       export interface Clear {
-        /** Ответсвенный */
+        /** Ответственный */
         owner: string;
+
+        /** Кому доступен в управлении */
         permissions: string;
+
+        /** Теги */
         tags: Array<string>;
+
+        /** Ресурсы */
         source: string;
+
+        /** Рабочее название компании */
         name: string;
+
+        /** Форма собственности */
         ownership: string | Core.Company.Ownership;
+
+        /** Клиенты ?? */
         clients: Array<string>;
+
+        /** Номер телефона компании */
         phoneNumber?: string;
+
+        /** Фактический адрес */
         factLocation?: string;
+
+        /** Адрес компани  */
         companyLocation?: string;
+
+        /** Почтовый адрес компании*/
         postLocation?: string;
+
+        /** Факс */
         fax?: string;
+
+        /** Телефон */
         phones?: Array<string>;
+
+        /** Количество сотрудников */
         employeesCount?: number;
+
+        /** Домашняя страница - сайт */
         web?: string;
+
+        /** Реквизиты компании */
         requisites?: Core.Company.Requisites.CompanyName;
       }
-      
+
       export interface Schema extends Clear {
         _id?: string;
         id?: string;
+
+        /** Статус компании : true == work |  false == archive */
         active: boolean;
-  
+
         /** Тип объекта */
-        object: 'company';
+        object: string | 'company';
       }
 
       /**
