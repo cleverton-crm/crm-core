@@ -24,6 +24,8 @@ declare module 'crm-core' {
        * Клиент (данные)
        */
       export interface Schema {
+        _id?: string;
+        id?: string;
         object: 'client';
         first: string;
         last: string;

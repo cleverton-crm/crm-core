@@ -95,6 +95,9 @@ declare module 'crm-core' {
        * Basic fields for a profile
        */
       export interface Schema {
+        _id?: string;
+        id?: string;
+
         /** UserID - Принадлежность объекта */
         owner: string;
 
