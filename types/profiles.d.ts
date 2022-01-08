@@ -1,5 +1,3 @@
-import { Object } from 'crm-core';
-
 declare module 'crm-core' {
   /**
    * Основное ядро Пользователя
