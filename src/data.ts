@@ -6,3 +6,4 @@
 /// <reference path="../types/personal.d.ts" />
 /// <reference path="../types/profiles.d.ts" />
 /// <reference types="node" />
+declare module 'crm-core' {}

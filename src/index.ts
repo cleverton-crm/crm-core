@@ -209,7 +209,43 @@ export class Core {
     errors: string,
   ): Promise<Core.Response.Answer> | Core.Response.Error {
     return {
-      statusCode: 200,
+      statusCode: 400,
+      message: message,
+      error: errors,
+    };
+  }
+
+  static ResponseNotFound(
+    message: string | string[],
+    status: number,
+    errors: string,
+  ): Promise<Core.Response.Answer> | Core.Response.Error {
+    return {
+      statusCode: HttpStatus.NOT_FOUND,
+      message: message,
+      error: errors,
+    };
+  }
+
+  static ResponseBadRequest(
+    message: string | string[],
+    status: number,
+    errors: string,
+  ): Promise<Core.Response.Answer> | Core.Response.Error {
+    return {
+      statusCode: HttpStatus.BAD_REQUEST,
+      message: message,
+      error: errors,
+    };
+  }
+
+  static ResponseUnauthorized(
+    message: string | string[],
+    status: number,
+    errors: string,
+  ): Promise<Core.Response.Answer> | Core.Response.Error {
+    return {
+      statusCode: HttpStatus.UNAUTHORIZED,
       message: message,
       error: errors,
     };

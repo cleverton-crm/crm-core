@@ -72,7 +72,28 @@ class Core {
      */
     static ResponseError(message, status, errors) {
         return {
-            statusCode: 200,
+            statusCode: 400,
+            message: message,
+            error: errors,
+        };
+    }
+    static ResponseNotFound(message, status, errors) {
+        return {
+            statusCode: common_1.HttpStatus.NOT_FOUND,
+            message: message,
+            error: errors,
+        };
+    }
+    static ResponseBadRequest(message, status, errors) {
+        return {
+            statusCode: common_1.HttpStatus.BAD_REQUEST,
+            message: message,
+            error: errors,
+        };
+    }
+    static ResponseUnauthorized(message, status, errors) {
+        return {
+            statusCode: common_1.HttpStatus.UNAUTHORIZED,
             message: message,
             error: errors,
         };

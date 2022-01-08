@@ -6,8 +6,8 @@
 /// <reference path="../types/personal.d.ts" />
 /// <reference path="../types/profiles.d.ts" />
 /// <reference types="node" />
+import { Observable } from 'rxjs';
 declare module 'crm-core' {
-  import { Observable } from 'rxjs';
   export declare namespace Core {
     /**
      * Response Core Api
@@ -168,6 +168,24 @@ declare module 'crm-core' {
      * @constructor
      */
     static ResponseError(
+      message: string | string[],
+      status: number,
+      errors: string,
+    ): Promise<Core.Response.Answer> | Core.Response.Error;
+
+    static ResponseNotFound(
+      message: string | string[],
+      status: number,
+      errors: string,
+    ): Promise<Core.Response.Answer> | Core.Response.Error;
+
+    static ResponseBadRequest(
+      message: string | string[],
+      status: number,
+      errors: string,
+    ): Promise<Core.Response.Answer> | Core.Response.Error;
+
+    static ResponseUnauthorized(
       message: string | string[],
       status: number,
       errors: string,
