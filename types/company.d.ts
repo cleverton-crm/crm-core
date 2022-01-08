@@ -1,5 +1,3 @@
-import { Clear } from 'crm-core';
-
 declare module 'crm-core' {
   export namespace Core {
     export namespace Company {
@@ -200,6 +198,15 @@ declare module 'crm-core' {
           data: Core.Company.Requisites.Info;
         }
 
+        export interface Finance {
+          tax_system?: string;
+          income?: string;
+          expense?: string;
+          debt?: string;
+          penalty?: string;
+          year?: string;
+        }
+
         /**
          *  О компании и ее реквизиты
          */
@@ -223,6 +230,7 @@ declare module 'crm-core' {
           opf?: Core.Company.Requisites.OPF;
           name?: Core.Company.Requisites.Name;
           inn?: string;
+          finance: Core.Company.Requisites.Finance;
           ogrn?: string;
           okpo?: string;
           okato?: string;
@@ -234,7 +242,6 @@ declare module 'crm-core' {
           authorities?: string | null;
           documents?: string | null;
           licenses?: string | null;
-          finance?: string | null;
           address?: Core.Company.Requisites.Address;
           phones?: string | null;
           emails?: string | null;
