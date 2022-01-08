@@ -22,9 +22,8 @@ declare module 'crm-core' {
         timezone?: string;
       }
       /** Статус пользователя */
-      export namespace Capabilities {
-        export type PersonaStatus = 'active' | 'inactive' | 'banned';
-      }
+
+      export type PersonaStatus = 'active' | 'inactive' | 'banned';
 
       export type Gender = 'Male' | 'Female';
 
@@ -197,7 +196,7 @@ declare module 'crm-core' {
         about?: string | null;
 
         /** Статус: Активный или не активный */
-        status?: string | Core.Profiles.Capabilities.PersonaStatus;
+        status?: string | Core.Profiles.PersonaStatus;
 
         /** Разговорный язык */
         language?: string | null;
