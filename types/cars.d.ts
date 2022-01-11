@@ -54,6 +54,9 @@ declare module 'crm-core' {
 
         /** Калибровка (общий объем / секционно) */
         calibration: Core.Cars.VehicleData;
+
+        /** Поле для архивации техники */
+        active: boolean;
       }
     }
   }
