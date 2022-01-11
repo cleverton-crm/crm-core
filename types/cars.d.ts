@@ -5,10 +5,10 @@ declare module 'crm-core' {
       /** Составные части модели для техники */
       export interface VehicleData {
         /** Данные тягача */
-        tractor: any;
+        tractor: string;
 
         /** Данные ппц */
-        semitrailer: any;
+        semitrailer: string;
       }
 
       /** Модель техники компании */
