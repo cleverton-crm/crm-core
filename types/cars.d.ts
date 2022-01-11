@@ -23,10 +23,10 @@ declare module 'crm-core' {
         govNumber: Core.Cars.VehicleData;
 
         /** VIN */
-        VIN: Core.Cars.VehicleData;
+        vin: Core.Cars.VehicleData;
 
         /** Тип ТС */
-        TypeTS: Core.Cars.VehicleData;
+        typeTS: Core.Cars.VehicleData;
 
         /** Год выпуска */
         issueYear: Core.Cars.VehicleData;
