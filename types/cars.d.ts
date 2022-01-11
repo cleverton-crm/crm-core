@@ -11,6 +11,12 @@ declare module 'crm-core' {
         semitrailer: string;
       }
 
+      /** Данные для архивации техники */
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
+      }
+
       /** Модель техники компании */
       export interface Schema {
         /** ID компании */
