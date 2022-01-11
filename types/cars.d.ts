@@ -14,7 +14,7 @@ declare module 'crm-core' {
       /** Модель техники компании */
       export interface Schema {
         /** ID компании */
-        companyId: string;
+        company: string;
 
         /** Марка, модель */
         model: Core.Cars.VehicleData;
