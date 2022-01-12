@@ -5,16 +5,22 @@ declare module 'crm-core' {
       /** Составные части модели для техники */
       export interface VehicleData {
         /** Данные тягача */
-        tractor: any;
+        tractor: string;
 
         /** Данные ппц */
-        semitrailer: any;
+        semitrailer: string;
+      }
+
+      /** Данные для архивации техники */
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
       }
 
       /** Модель техники компании */
       export interface Schema {
         /** ID компании */
-        companyId: string;
+        company: string;
 
         /** Марка, модель */
         model: Core.Cars.VehicleData;
@@ -23,10 +29,10 @@ declare module 'crm-core' {
         govNumber: Core.Cars.VehicleData;
 
         /** VIN */
-        VIN: Core.Cars.VehicleData;
+        vin: Core.Cars.VehicleData;
 
         /** Тип ТС */
-        TypeTS: Core.Cars.VehicleData;
+        typeTS: Core.Cars.VehicleData;
 
         /** Год выпуска */
         issueYear: Core.Cars.VehicleData;
@@ -54,6 +60,9 @@ declare module 'crm-core' {
 
         /** Калибровка (общий объем / секционно) */
         calibration: Core.Cars.VehicleData;
+
+        /** Поле для архивации техники */
+        active: boolean;
       }
     }
   }
