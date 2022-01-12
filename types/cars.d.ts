@@ -17,6 +17,12 @@ declare module 'crm-core' {
         active: boolean;
       }
 
+      /** Данные для изменения техники */
+      export interface UpdateData {
+        id: string;
+        data: Core.Cars.Schema;
+      }
+
       /** Модель техники компании */
       export interface Schema {
         /** ID компании */
