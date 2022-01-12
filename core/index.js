@@ -72,7 +72,7 @@ class Core {
      */
     static ResponseError(message, status, errors) {
         return {
-            statusCode: 400,
+            statusCode: status,
             message: message,
             error: errors,
         };

@@ -6,8 +6,8 @@
 /// <reference path="../types/personal.d.ts" />
 /// <reference path="../types/profiles.d.ts" />
 /// <reference types="node" />
-import { Observable } from 'rxjs';
 declare module 'crm-core' {
+  import { Observable } from 'rxjs';
   export declare namespace Core {
     /**
      * Response Core Api

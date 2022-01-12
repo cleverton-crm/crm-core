@@ -209,7 +209,7 @@ export class Core {
     errors: string,
   ): Promise<Core.Response.Answer> | Core.Response.Error {
     return {
-      statusCode: 400,
+      statusCode: status,
       message: message,
       error: errors,
     };
