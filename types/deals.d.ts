@@ -62,7 +62,7 @@ declare module 'crm-core' {
       export interface CommentData {
         id: string;
         userId: string;
-        comments: Map<string, any>;
+        comments: string;
       }
     }
 
