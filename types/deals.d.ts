@@ -19,7 +19,7 @@ declare module 'crm-core' {
         _id?: string;
         name: string;
         author: string;
-        active: string;
+        active: boolean;
         sum: number;
         fuelType: string | null;
         fuelAmount: number;
