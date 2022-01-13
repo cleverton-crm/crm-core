@@ -8,12 +8,18 @@ declare module 'crm-core' {
        * Схема хранения сделки
        */
 
-      export type Status = "Новая" | "Подготовка документов" | "Счет на предоплату" | "В работе" | "Финальный счет"
+      export type Status =
+        | 'Новая'
+        | 'Подготовка документов'
+        | 'Счет на предоплату'
+        | 'В работе'
+        | 'Финальный счет';
 
       export interface Schema {
         _id?: string;
         name: string;
         author: string;
+        active: string;
         sum: number;
         fuelType: string | null;
         fuelAmount: number;
