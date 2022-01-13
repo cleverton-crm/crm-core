@@ -14,13 +14,12 @@ declare module 'crm-core' {
         _id?: string;
         name: string;
         author: string;
-        sum: number | 0;
+        sum: number;
         fuelType: string | null;
+        fuelAmount: number;
         owner: string;
         permissions: string;
         ownership: string | Core.Company.Ownership;
-        dealCreated: Date;
-        fuelAmount: number | 0;
         tags: Array<string> | [];
         fullname: string | null;
         source: string | null;
