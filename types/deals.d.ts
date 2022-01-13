@@ -61,7 +61,7 @@ declare module 'crm-core' {
 
       export interface HistoryData {
         id: string;
-        comments: Array<string>;
+        comments: Map<string, any>;
         whoChange: string;
       }
     }
