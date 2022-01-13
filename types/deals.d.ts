@@ -59,8 +59,9 @@ declare module 'crm-core' {
         data: Core.Deals.Schema;
       }
 
-      export interface HistoryData {
+      export interface CommentData {
         id: string;
+        userId: string;
         comments: Map<string, any>;
       }
     }
