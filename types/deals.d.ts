@@ -17,21 +17,43 @@ declare module 'crm-core' {
 
       export interface Schema {
         _id?: string;
+        /** Наименование сделки */
         name: string;
+        /** Автор создания сделки */
         author: string;
         active: boolean;
+        /** Сумма сделки */
         sum: number;
+        /** Тип топлива */
         fuelType: string | null;
+        /** Кол-во топлива */
         fuelAmount: number;
+        /** Ответственный */
         owner: string;
+        /** Доступность */
         permissions: string;
+        /** Тип плательщика */
         ownership: string | Core.Company.Ownership;
+        /** Тэги */
         tags: Array<string> | [];
+        /** ФИО */
         fullname: string | null;
+        /** Источник */
         source: string | null;
+        /** Статус сделки */
         status: string | Core.Deals.Status;
+        /** История изменения сделки */
         history: Map<string, any> | Core.Deals.History;
       }
+
+      /** Интерфейс арихвации сделки */
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
+      }
+
+      /** Интерфейс для изменения сделки */
+      export interface UpdateData {}
 
       export interface History {
         comments: Array<string>;
