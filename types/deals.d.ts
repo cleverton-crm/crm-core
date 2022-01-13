@@ -43,7 +43,7 @@ declare module 'crm-core' {
         /** Статус сделки */
         status: string | Core.Deals.Status;
         /** История изменения сделки */
-        history: Map<string, any> | Core.Deals.History;
+        history: Map<string, any>;
       }
 
       /** Интерфейс арихвации сделки */
@@ -59,7 +59,8 @@ declare module 'crm-core' {
         data: Core.Deals.Schema;
       }
 
-      export interface History {
+      export interface HistoryData {
+        id: string;
         comments: Array<string>;
         whoChange: string;
       }
