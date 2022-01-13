@@ -53,7 +53,10 @@ declare module 'crm-core' {
       }
 
       /** Интерфейс для изменения сделки */
-      export interface UpdateData {}
+      export interface UpdateData {
+        id: string;
+        data: Core.Deals.Schema;
+      }
 
       export interface History {
         comments: Array<string>;
