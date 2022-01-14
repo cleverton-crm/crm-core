@@ -25,6 +25,8 @@ declare module 'crm-core' {
         /** Кто имеет доступ  к данным */
         permissions: any;
 
+        active: boolean;
+
         /**  */
         payerType: string | Core.Company.Ownership;
         fullname: string;
