@@ -20,27 +20,29 @@ declare module 'crm-core' {
         name: string;
 
         /** Кому пренадлежит запись*/
-        owner: any;
+        owner: string;
 
         /** Кто имеет доступ  к данным */
-        permissions: any;
+        permissions: string;
+
         active: boolean;
-        /**  */
+        /** Тип плательщика  */
         payerType: string | Core.Company.Ownership;
+        /** ФИО */
         fullname: string;
         position: string;
         companyRole: string | Core.Leads.CompanyRole;
-        workPhone: string | null;
-        mobilePhone: string | null;
+        workPhone?: string | null;
+        mobilePhone?: string | null;
         delivery: string | null;
         source: string | null;
-        mobilePhone2: string | null;
-        mobilePhone3: string | null;
-        personalEmail: string | null;
-        corporateEmail: string | null;
-        skype: string | null;
+        mobilePhone2?: string | null;
+        mobilePhone3?: string | null;
+        personalEmail?: string | null;
+        corporateEmail?: string | null;
+        skype?: string | null;
         birthDate: Date;
-        comments: string | null;
+        comments?: string | null;
         passport: Core.Leads.Passport;
         licenses: Core.Leads.Licenses;
       }
