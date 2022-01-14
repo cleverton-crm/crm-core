@@ -24,9 +24,7 @@ declare module 'crm-core' {
 
         /** Кто имеет доступ  к данным */
         permissions: any;
-
         active: boolean;
-
         /**  */
         payerType: string | Core.Company.Ownership;
         fullname: string;
@@ -43,6 +41,8 @@ declare module 'crm-core' {
         skype: string | null;
         birthDate: Date;
         comments: string | null;
+        passport: Core.Leads.Passport;
+        licenses: Core.Leads.Licenses;
       }
 
       export interface Passport {
