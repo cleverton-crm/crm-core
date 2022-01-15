@@ -58,6 +58,16 @@ declare module 'crm-core' {
         categories: string[];
         adr: string; // ДОПОГ
       }
+
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
+      }
+
+      export interface UpdateData {
+        id: string;
+        data: Core.Leads.Schema;
+      }
     }
 
     export class Leads {
