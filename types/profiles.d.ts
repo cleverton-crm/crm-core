@@ -47,6 +47,7 @@ declare module 'crm-core' {
         series: string;
         number: string;
         dateOfIssue: Date;
+        issuedBy?: string;
       }
 
       /** Водительсокое удостоверение */
