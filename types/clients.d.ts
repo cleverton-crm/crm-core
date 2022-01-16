@@ -48,8 +48,8 @@ declare module 'crm-core' {
         birthDate: Date;
         comments: Map<string, string>;
         attachments: Map<string, string>;
-        passport: string | Core.Client.PassportClientData;
-        licenses: string | Core.Client.LicensesClientData;
+        passport: Core.Client.PassportClientData;
+        licenses: Core.Client.LicensesClientData;
       }
 
       export interface ArchiveData {
