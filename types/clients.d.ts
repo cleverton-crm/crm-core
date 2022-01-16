@@ -53,6 +53,11 @@ declare module 'crm-core' {
         active: boolean;
       }
 
+      export interface UpdateData {
+        id: string;
+        data: Core.Client.Schema;
+      }
+
       /**
        * Схема для mongodb
        */
