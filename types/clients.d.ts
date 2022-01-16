@@ -1,3 +1,5 @@
+import { LicensesClientData, PassportClientData } from 'crm-core';
+
 declare module 'crm-core' {
   export namespace Core {
     export namespace Client {
@@ -46,6 +48,8 @@ declare module 'crm-core' {
         birthDate: Date;
         comments: Map<string, string>;
         attachments: Map<string, string>;
+        passport: string | Core.Client.PassportClientData;
+        licenses: string | Core.Client.LicensesClientData;
       }
 
       export interface ArchiveData {
@@ -56,6 +60,19 @@ declare module 'crm-core' {
       export interface UpdateData {
         id: string;
         data: Core.Client.Schema;
+      }
+
+      export interface PassportClientData {
+        series: string;
+        number: string;
+        dateOfIssue: Date;
+        issuedBy: string;
+      }
+
+      export interface LicensesClientData {
+        validity: Date;
+        categories: string[];
+        adr: string; // ДОПОГ
       }
 
       /**
