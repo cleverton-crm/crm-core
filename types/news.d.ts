@@ -9,6 +9,14 @@ declare module 'crm-core' {
         author: string;
         active: boolean;
       }
+      export interface ArchiveData {
+        id: string;
+        active: boolean;
+      }
+      export interface UpdateData {
+        id: string;
+        data: Core.News.Schema;
+      }
     }
     export class News {
       static News: typeof News;
