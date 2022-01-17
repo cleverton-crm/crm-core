@@ -17,6 +17,11 @@ declare module 'crm-core' {
         id: string;
         data: Core.News.Schema;
       }
+      export interface CommentData {
+        id: string;
+        userId: string;
+        comments: string;
+      }
     }
     export class News {
       static News: typeof News;
