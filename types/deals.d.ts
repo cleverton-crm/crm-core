@@ -31,7 +31,7 @@ declare module 'crm-core' {
         /** Ответственный */
         owner: string;
         /** Доступность */
-        permissions: string;
+        permissions: Map<string, any>;
         /** Тип плательщика */
         ownership: string | Core.Company.Ownership;
         /** Тэги */

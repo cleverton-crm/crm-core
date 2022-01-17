@@ -286,7 +286,7 @@ declare module 'crm-core' {
         owner: string;
 
         /** Кому доступен в управлении */
-        permissions: string;
+        permissions: Map<string, any>;
 
         /** Теги */
         tags: Array<string>;

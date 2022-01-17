@@ -23,7 +23,7 @@ declare module 'crm-core' {
         owner: string;
 
         /** Кто имеет доступ  к данным */
-        permissions: string;
+        permissions: Map<string, any>;
 
         active: boolean;
         /** Тип плательщика  */
