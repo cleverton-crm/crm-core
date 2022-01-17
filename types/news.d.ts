@@ -4,7 +4,7 @@ declare module 'crm-core' {
       export interface Schema {
         name: string;
         content: string;
-        picture: Map<string, any>;
+        picture?: Map<string, any>;
         comments: Map<string, any>;
         author: string;
         active: boolean;
