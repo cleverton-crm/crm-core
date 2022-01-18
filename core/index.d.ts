@@ -1,3 +1,4 @@
+/// <reference path="../types/mongoose.d.ts" />
 /// <reference path="../types/cars.d.ts" />
 /// <reference path="../types/settings.d.ts" />
 /// <reference path="../types/deals.d.ts" />
@@ -10,7 +11,7 @@
 /// <reference types="node" />
 declare module 'crm-core' {
   import { Observable } from 'rxjs';
-  export declare namespace Core {
+  export namespace Core {
     /**
      * Response Core Api
      * Core.Response.Data - используется при правильном ответе с данными
@@ -114,7 +115,7 @@ declare module 'crm-core' {
       }
     }
   }
-  export declare namespace Client {
+  export namespace Client {
     class ClientProxy {
       send<TResult = any, TInput = any>(
         pattern: any,
@@ -128,7 +129,7 @@ declare module 'crm-core' {
     }
   }
 
-  export declare class Core {
+  export class Core {
     private static logger;
     static Core: typeof Core;
 
