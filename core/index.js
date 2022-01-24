@@ -57,6 +57,25 @@ class Core {
             };
         }
     }
+    static ResponseDataRecords(message, data, records, status = 200, isError = false, errorStatus = '') {
+        if (isError) {
+            return {
+                statusCode: status,
+                message: message,
+                error: errorStatus,
+                records: records,
+                data: null,
+            };
+        }
+        else {
+            return {
+                statusCode: 200,
+                message: message,
+                data: data,
+                records: records,
+            };
+        }
+    }
     static ResponseSuccess(message, status = 200) {
         return {
             statusCode: status,

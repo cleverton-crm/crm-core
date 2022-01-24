@@ -30,6 +30,7 @@ export namespace Core {
       statusCode: number;
       message: string | Object;
       data: any;
+      records: any;
     }
 
     /**
@@ -182,6 +183,32 @@ export class Core {
         statusCode: 200,
         message: message,
         data: data,
+      };
+    }
+  }
+
+  static ResponseDataRecords(
+    message: string | Object,
+    data: any,
+    records: any,
+    status: number = 200,
+    isError: boolean = false,
+    errorStatus: string = '',
+  ): Core.Response.Answer {
+    if (isError) {
+      return {
+        statusCode: status,
+        message: message,
+        error: errorStatus,
+        records: records,
+        data: null,
+      };
+    } else {
+      return {
+        statusCode: 200,
+        message: message,
+        data: data,
+        records: records,
       };
     }
   }

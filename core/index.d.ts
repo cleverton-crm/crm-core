@@ -10,8 +10,8 @@
 /// <reference path="../types/personal.d.ts" />
 /// <reference path="../types/profiles.d.ts" />
 /// <reference types="node" />
+import { Observable } from 'rxjs';
 declare module 'crm-core' {
-  import { Observable } from 'rxjs';
   export namespace Core {
     /**
      * Response Core Api
@@ -37,6 +37,7 @@ declare module 'crm-core' {
         statusCode: number;
         message: string | Object;
         data: any;
+        records: any;
       }
 
       /**
@@ -116,7 +117,7 @@ declare module 'crm-core' {
       }
     }
   }
-  export namespace Client {
+  export declare namespace Client {
     class ClientProxy {
       send<TResult = any, TInput = any>(
         pattern: any,
@@ -130,7 +131,7 @@ declare module 'crm-core' {
     }
   }
 
-  export class Core {
+  export declare class Core {
     private static logger;
     static Core: typeof Core;
 
@@ -154,6 +155,15 @@ declare module 'crm-core' {
     static ResponseData(
       message: string | Object,
       data: any,
+      status?: number,
+      isError?: boolean,
+      errorStatus?: string,
+    ): Core.Response.Answer;
+
+    static ResponseDataRecords(
+      message: string | Object,
+      data: any,
+      records: any,
       status?: number,
       isError?: boolean,
       errorStatus?: string,
