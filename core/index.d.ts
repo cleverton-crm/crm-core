@@ -1,3 +1,4 @@
+/// <reference path="../types/extend.d.ts" />
 /// <reference path="../types/mongoose.d.ts" />
 /// <reference path="../types/cars.d.ts" />
 /// <reference path="../types/settings.d.ts" />
