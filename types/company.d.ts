@@ -327,6 +327,8 @@ declare module 'crm-core' {
         /** Домашняя страница - сайт */
         web?: string;
 
+        inn?: string;
+
         /** Реквизиты компании */
         requisites?: Core.Company.Requisites.CompanyName;
       }
