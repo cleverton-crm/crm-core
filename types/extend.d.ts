@@ -1,3 +1,5 @@
+import { MongoOptionsData } from 'crm-core';
+
 declare module 'crm-core' {
   export namespace Core {
     /**
@@ -28,6 +30,28 @@ declare module 'crm-core' {
       pageCollation?: {};
       defaultLimit?: number;
       excludedKeys?: string[];
+    }
+
+    export namespace Response {
+      export interface MongoOptionsData {
+        currentPage: number;
+        hasNextPage: boolean;
+        hasPrevPage: boolean;
+        next: number | null;
+        prev: number | null;
+        pageCount: number;
+        perPage: number;
+        slNo: number;
+
+        totalPages: number;
+      }
+
+      export interface RecordsData {
+        statusCode: number;
+        message: string;
+        records: Core.MongoOptionsData;
+        data: [];
+      }
     }
   }
 }
