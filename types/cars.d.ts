@@ -69,6 +69,10 @@ declare module 'crm-core' {
 
         /** Поле для архивации техники */
         active: boolean;
+  
+        _id: string;
+        createdAt: string;
+        updatedAt: string;
       }
     }
   }

@@ -331,6 +331,11 @@ declare module 'crm-core' {
 
         /** Реквизиты компании */
         requisites?: Core.Company.Requisites.CompanyName;
+  
+        bank: Core.Company.Bank | null;
+        partner: Record<string, any>;
+        park: Record<string, any>;
+        holding: Record<string, any>;
       }
 
       export interface Schema extends Clear {

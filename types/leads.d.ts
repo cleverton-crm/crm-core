@@ -30,10 +30,12 @@ declare module 'crm-core' {
         object: string | 'task';
         type: string | 'leads' | 'deals';
         description: string;
-        status: string;
+        status: number;
         tags: Array<string>;
         activity: Map<string, any>;
         client: Core.Client.Schema;
+        _id: string
+        createAt: Date
       }
 
       export interface ArchiveData {

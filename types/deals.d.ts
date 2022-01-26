@@ -44,6 +44,7 @@ declare module 'crm-core' {
         status: string | Core.Deals.Status;
         /** История изменения сделки */
         history: Map<string, any>;
+        createAt: Date
       }
 
       /** Интерфейс арихвации сделки */
