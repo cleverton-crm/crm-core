@@ -1,8 +1,8 @@
 {
   "name": "crm-core",
-  "version": "1.0.3",
-  "description": "TypeScript definitions for Cleverdeus Miscroservice",
-  "homepage": "https://github.com/cleverdeus/core-types#readme",
+  "version": "1.0.72",
+  "description": "TypeScript definitions for Miscroservices",
+  "homepage": "https://github.com/cleverton-crm/crm-core#readme",
   "contributors": [
     {
       "name": "Alexander Hunter",
@@ -45,7 +45,8 @@
     "lint": "eslint --ext .js,.jsx,.ts .",
     "fix": "yarn lint --fix && ./scripts/updateAPIVersion.js",
     "report": "nyc -r text -r lcov report",
-    "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
@@ -69,6 +70,7 @@
     "@nestjs/swagger": "^5.1.5",
     "amd-loader": "^0.0.8",
     "dts-generator": "^3.0.0",
+    "husky": "^7.0.4",
     "qs": "^6.6.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
