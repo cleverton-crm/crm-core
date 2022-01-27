@@ -1,21 +1,18 @@
 declare module 'crm-core' {
   export namespace Core {
     export namespace Leads {
-      export type CompanyRole =
-        | 'Учредитель'
-        | 'Соучредитель'
-        | 'Руководитель'
-        | 'Главный бухгалтер'
-        | 'Бухгалтер ответственный за учет'
-        | 'Уполномочен делать заявки'
-        | 'Уполномочен принимать ГСМ, ЛПР, ЛВР'
-        | 'Водитель'
-        | ' Другое';
-
+      export type LeadStatus =
+        | 'Новый запрос'
+        | 'Переговоры'
+        | 'Принятие решения'
+        | 'Согласование'
+        | 'Завершить сделку';
       /**
        * Основная информация о лиде
        */
       export interface Schema {
+        _id?: string;
+
         /** Название лида */
         name: string;
 
@@ -28,14 +25,21 @@ declare module 'crm-core' {
 
         active: boolean;
         object: string | 'task';
-        type: string | 'leads' | 'deals';
+        type: string | 'leads';
         description: string;
-        status: number;
+        status: string | Core.Leads.LeadStatus;
         tags: Array<string>;
+        company: string;
+        attachments: Map<string, any>;
         activity: Map<string, any>;
+        price: number;
+        currency: string;
+        startDate: Date;
+        endDate: Date;
+        information: Map<string, any>;
+        source: string;
+        createdAt: Date;
         client: Core.Client.Schema;
-        _id: string
-        createAt: Date
       }
 
       export interface ArchiveData {
