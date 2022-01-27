@@ -39,6 +39,7 @@ declare module 'crm-core' {
         information: Map<string, any>;
         source: string;
         createdAt: Date;
+        updatedAt: Date;
         client: Core.Client.Schema;
       }
 
