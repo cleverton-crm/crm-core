@@ -40,7 +40,8 @@ declare module 'crm-core' {
         source: string;
         createdAt: Date;
         updatedAt: Date;
-        client: Core.Client.Schema;
+        client: string;
+        contacts: Array<any>;
       }
 
       export interface ArchiveData {
