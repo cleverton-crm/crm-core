@@ -44,7 +44,7 @@ declare module 'crm-core' {
         socials: Map<string, string>;
         voices: Map<string, string> | Core.Client.SocialVoices;
         birthDate: Date | null;
-        comments: string;
+        comments: Map<string, string>;
         attachments: Map<string, string>;
         passport: Core.Client.PassportClientData;
         licenses: Core.Client.LicensesClientData;
