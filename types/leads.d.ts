@@ -10,6 +10,11 @@ declare module 'crm-core' {
       /**
        * Основная информация о лиде
        */
+      export interface Contacts {
+        clients: Array<Core.Client.Schema>,
+        company: Core.Company.Schema
+      }
+      
       export interface Schema {
         _id?: string;
 
@@ -41,7 +46,7 @@ declare module 'crm-core' {
         createdAt: Date;
         updatedAt: Date;
         client: string;
-        contacts: Array<Core.Client.Schema | Core.Company.Schema>;
+        contacts: Core.Leads.Contacts;
       }
 
       export interface ArchiveData {
