@@ -10,14 +10,14 @@ declare module 'crm-core' {
        * Голосовая связь
        */
       export interface SocialVoices {
-        whatsapp: string | null;
-        skype: string | null;
-        viber: string | null;
-        telegram: string | null;
-        slack: string | null;
-        discord: string | null;
-        vk: string | null;
-        fb: string | null;
+        whatsapp?: string | null;
+        skype?: string | null;
+        viber?: string | null;
+        telegram?: string | null;
+        slack?: string | null;
+        discord?: string | null;
+        vk?: string | null;
+        fb?: string | null;
       }
 
       /**
