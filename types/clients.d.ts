@@ -43,8 +43,8 @@ declare module 'crm-core' {
         emailCompany: string;
         socials: Map<string, string>;
         voices: Map<string, string> | Core.Client.SocialVoices;
-        birthDate: Date;
-        comments: Map<string, string>;
+        birthDate: Date | null;
+        comments: string;
         attachments: Map<string, string>;
         passport: Core.Client.PassportClientData;
         licenses: Core.Client.LicensesClientData;
