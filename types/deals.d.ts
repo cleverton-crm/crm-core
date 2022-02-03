@@ -40,7 +40,7 @@ declare module 'crm-core' {
         price: number;
         currency: string;
         fuelType: string;
-        amountFuel: string;
+        amountFuel: number;
         startDate: Date;
         endDate: Date;
         information: Map<string, any>;
