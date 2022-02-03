@@ -39,6 +39,8 @@ declare module 'crm-core' {
         activity: Map<string, any>;
         price: number;
         currency: string;
+        fuelType: string;
+        amountFuel: string;
         startDate: Date;
         endDate: Date;
         information: Map<string, any>;
