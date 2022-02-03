@@ -1,6 +1,6 @@
 {
   "name": "crm-core",
-  "version": "1.0.86",
+  "version": "1.0.87",
   "description": "TypeScript definitions for Miscroservices",
   "homepage": "https://github.com/cleverton-crm/crm-core#readme",
   "contributors": [
