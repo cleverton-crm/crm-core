@@ -24,5 +24,8 @@ declare module 'crm-core' {
         data: Core.StatusDeals.Schema;
       }
     }
+    export class StatusDeals {
+      static StatusDeals: typeof StatusDeals;
+    }
   }
 }
