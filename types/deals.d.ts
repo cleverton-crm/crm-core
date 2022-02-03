@@ -1,69 +1,63 @@
 declare module 'crm-core' {
   export namespace Core {
-    /**
-     * Сделки
-     */
     export namespace Deals {
+      export type DealStatus =
+        | 'Новый запрос'
+        | 'Переговоры'
+        | 'Принятие решения'
+        | 'Согласование'
+        | 'Завершить сделку';
       /**
-       * Схема хранения сделки
+       * Основная информация о лиде
        */
-
-      export type Status =
-        | 'Новая'
-        | 'Подготовка документов'
-        | 'Счет на предоплату'
-        | 'В работе'
-        | 'Финальный счет';
+      export interface Contacts {
+        clients: Array<Core.Client.Schema>;
+        company: Core.Company.Schema;
+      }
 
       export interface Schema {
         _id?: string;
-        /** Наименование сделки */
+
+        /** Название лида */
         name: string;
-        /** Автор создания сделки */
-        author: string;
-        active: boolean;
-        /** Сумма сделки */
-        sum: number;
-        /** Тип топлива */
-        fuelType: string | null;
-        /** Кол-во топлива */
-        fuelAmount: number;
+
         /** Ответственный */
         owner: string;
-        /** Доступность */
+
+        author: string;
+        /** Кто имеет доступ  к данным */
         permissions: Map<string, any>;
-        /** Тип плательщика */
-        ownership: string | Core.Company.Ownership;
-        /** Тэги */
-        tags: Array<string> | [];
-        /** ФИО */
-        fullname: string | null;
-        /** Источник */
-        source: string | null;
-        /** Статус сделки */
-        status: string | Core.Deals.Status;
-        /** История изменения сделки */
-        history: Map<string, any>;
-        createAt: Date
+
+        active: boolean;
+        object: string | 'task';
+        type: string | 'lead' | 'deal';
+        description: string;
+        status: string | Core.Deals.LeadStatus;
+        tags: Array<string>;
+        company: string;
+        attachments: Map<string, any>;
+        activity: Map<string, any>;
+        price: number;
+        currency: string;
+        startDate: Date;
+        endDate: Date;
+        information: Map<string, any>;
+        source: string;
+        createdAt: Date;
+        updatedAt: Date;
+        client: string;
+        contacts: Core.Deals.Contacts;
       }
 
-      /** Интерфейс арихвации сделки */
       export interface ArchiveData {
         id: string;
+        userId: string;
         active: boolean;
       }
 
-      /** Интерфейс для изменения сделки */
       export interface UpdateData {
         id: string;
-        userId: string;
         data: Core.Deals.Schema;
-      }
-
-      export interface CommentData {
-        id: string;
-        userId: string;
-        comments: string;
       }
     }
 
