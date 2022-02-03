@@ -2,15 +2,15 @@
 /// <reference path="../types/cars.d.ts" />
 /// <reference path="../types/settings.d.ts" />
 /// <reference path="../types/deals.d.ts" />
-/// <reference path="../types/statusdeals.d.ts" />
 /// <reference path="../types/company.d.ts" />
 /// <reference path="../types/clients.d.ts" />
 /// <reference path="../types/personal.d.ts" />
 /// <reference path="../types/profiles.d.ts" />
+/// <reference path="../types/statusdeals.d.ts" />
 /// <reference types="node" />
 import { Observable } from 'rxjs';
 declare module 'crm-core' {
-  export declare namespace Core {
+  export namespace Core {
     /**
      * Response Core Api
      * Core.Response.Data - используется при правильном ответе с данными
@@ -115,7 +115,7 @@ declare module 'crm-core' {
       }
     }
   }
-  export declare namespace Client {
+  export namespace Client {
     class ClientProxy {
       send<TResult = any, TInput = any>(
         pattern: any,
@@ -129,7 +129,7 @@ declare module 'crm-core' {
     }
   }
 
-  export declare class Core {
+  export class Core {
     private static logger;
     static Core: typeof Core;
 
