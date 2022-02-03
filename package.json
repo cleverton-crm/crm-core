@@ -1,6 +1,6 @@
 {
   "name": "crm-core",
-  "version": "1.0.92",
+  "version": "1.0.93",
   "description": "TypeScript definitions for Miscroservices",
   "homepage": "https://github.com/cleverton-crm/crm-core#readme",
   "contributors": [
@@ -25,13 +25,13 @@
   "files": [
     "./core",
     "./types",
-    "./index.d.ts",
+    "index.d.ts",
     "./core/index.d.ts"
   ],
   "license": "MIT",
   "main": "./core/index.js",
-  "module": "./index.d.ts",
-  "types": "./index.d.ts",
+  "module": "index.d.ts",
+  "types": "index.d.ts",
   "bugs": {
     "url": "https://github.com/cleverton-crm/crm-core.git"
   },
