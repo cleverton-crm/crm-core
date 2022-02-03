@@ -12,7 +12,7 @@ declare module 'crm-core' {
        */
       export interface Contacts {
         clients: Array<Core.Client.Schema>;
-        company: Core.Company.Schema;
+        company: Core.Company.Schema | null;
       }
 
       export interface Schema {
