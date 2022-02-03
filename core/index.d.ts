@@ -1,16 +1,6 @@
-/// <reference path="../types/extend.d.ts" />
-/// <reference path="../types/cars.d.ts" />
-/// <reference path="../types/settings.d.ts" />
-/// <reference path="../types/deals.d.ts" />
-/// <reference path="../types/company.d.ts" />
-/// <reference path="../types/clients.d.ts" />
-/// <reference path="../types/personal.d.ts" />
-/// <reference path="../types/profiles.d.ts" />
-/// <reference path="../types/statusdeals.d.ts" />
-/// <reference types="node" />
 import { Observable } from 'rxjs';
 declare module 'crm-core' {
-  export namespace Core {
+  export declare namespace Core {
     /**
      * Response Core Api
      * Core.Response.Data - используется при правильном ответе с данными
@@ -27,7 +17,6 @@ declare module 'crm-core' {
         pagingCounter: 'slNo';
         meta: 'records';
       }
-
       /**
        *
        */
@@ -37,7 +26,6 @@ declare module 'crm-core' {
         data: any;
         records: any;
       }
-
       /**
        * Core.Response.Success - используется при правильном ответе
        */
@@ -45,7 +33,6 @@ declare module 'crm-core' {
         statusCode: number;
         message: string | Object;
       }
-
       /**
        * Core.Response.Error - Используется при ошибке
        */
@@ -54,21 +41,18 @@ declare module 'crm-core' {
         message: string | string[];
         error: string;
       }
-
       /** Ошибочные данные - объект не найден */
       interface NotFound {
         statusCode: number;
         message: string | string[];
         error: string;
       }
-
       /** Ошибочные данные - не правильный запрос */
       interface BadRequest {
         statusCode: number;
         message: string | string[];
         error: string;
       }
-
       type Answer = Data | Success | Error | NotFound | BadRequest;
     }
     namespace Geo {
@@ -96,14 +80,12 @@ declare module 'crm-core' {
         hosting: boolean;
         query: string;
       }
-
       /**
        * Location data transfer along with mailing address
        */
       interface LocationEmail extends Location {
         email: string;
       }
-
       interface Address {
         state?: string;
         country?: string;
@@ -115,24 +97,22 @@ declare module 'crm-core' {
       }
     }
   }
-  export namespace Client {
+
+  export declare namespace Client {
     class ClientProxy {
       send<TResult = any, TInput = any>(
         pattern: any,
         data: TInput,
       ): Observable<TResult>;
-
       emit<TResult = any, TInput = any>(
         pattern: any,
         data: TInput,
       ): Observable<TResult>;
     }
   }
-
-  export class Core {
+  export declare class Core {
     private static logger;
     static Core: typeof Core;
-
     /**
      * Async Response Data
      * @param {String} message
@@ -149,7 +129,6 @@ declare module 'crm-core' {
       isError?: boolean,
       errorStatus?: string,
     ): Promise<Core.Response.Answer>;
-
     static ResponseData(
       message: string | Object,
       data: any,
@@ -157,7 +136,6 @@ declare module 'crm-core' {
       isError?: boolean,
       errorStatus?: string,
     ): Core.Response.Answer;
-
     static ResponseDataRecords(
       message: string | Object,
       data: any,
@@ -166,12 +144,10 @@ declare module 'crm-core' {
       isError?: boolean,
       errorStatus?: string,
     ): Core.Response.Answer;
-
     static ResponseSuccess(
       message: string | Object,
       status?: number,
     ): Promise<Core.Response.Answer> | Core.Response.Success;
-
     /**
      * Ошибочное сообщение , любые Exceptions
      * @param message
@@ -184,35 +160,28 @@ declare module 'crm-core' {
       status: number,
       errors: string,
     ): Promise<Core.Response.Answer> | Core.Response.Error;
-
     static ResponseNotFound(
       message: string | string[],
       status: number,
       errors: string,
     ): Promise<Core.Response.Answer> | Core.Response.Error;
-
     static ResponseBadRequest(
       message: string | string[],
       status: number,
       errors: string,
     ): Promise<Core.Response.Answer> | Core.Response.Error;
-
     static ResponseUnauthorized(
       message: string | string[],
       status: number,
       errors: string,
     ): Promise<Core.Response.Answer> | Core.Response.Error;
-
     static OperationReadMe(path: string, context?: string): string | undefined;
-
     static SendAndResponse(
       client: Client.ClientProxy,
       pattern: string,
       data: any,
     ): Promise<Core.Response.Answer>;
-
     static ParseBool(value: any, defaultValue?: boolean): any;
-
     static ResponseDataLabels: {
       totalDocs: string;
       docs: string;
@@ -224,7 +193,6 @@ declare module 'crm-core' {
       pagingCounter: string;
       meta: string;
     };
-
     /**
      * Преобразование значений в логическое
      * @param {any} value
