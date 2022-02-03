@@ -60,6 +60,12 @@ declare module 'crm-core' {
         userId: string;
         data: Core.Deals.Schema;
       }
+
+      export interface CommentData {
+        id: string;
+        userId: string;
+        comments: string;
+      }
     }
 
     export class Deals {
