@@ -1,20 +1,6 @@
 declare module 'crm-core' {
   export namespace Core {
-    export namespace Deals {
-      export type DealStatus =
-        | 'Новый запрос'
-        | 'Переговоры'
-        | 'Принятие решения'
-        | 'Согласование'
-        | 'Завершить сделку';
-      /**
-       * Основная информация о лиде
-       */
-      export interface Contacts {
-        clients: Array<Core.Client.Schema>;
-        company: Core.Company.Schema;
-      }
-
+    export namespace StatusDeals {
       export interface Schema {
         _id?: string;
         name: string;
@@ -35,12 +21,12 @@ declare module 'crm-core' {
 
       export interface UpdateData {
         id: string;
-        data: Core.Deals.Schema;
+        data: Core.StatusDeals.Schema;
       }
     }
 
-    export class Deals {
-      static Deals: typeof Deals;
+    export class StatusDeals {
+      static StatusDeals: typeof StatusDeals;
     }
   }
 }
