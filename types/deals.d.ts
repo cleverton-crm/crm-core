@@ -59,7 +59,7 @@ declare module 'crm-core' {
 
       export interface UpdateData {
         id: string;
-        userId: string;
+        owner: any;
         data: Core.Deals.Schema;
       }
 
