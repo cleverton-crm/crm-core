@@ -1,6 +1,6 @@
 {
   "name": "crm-core",
-  "version": "1.0.107",
+  "version": "1.0.106",
   "description": "TypeScript definitions for Miscroservices",
   "homepage": "https://github.com/cleverton-crm/crm-core#readme",
   "contributors": [
@@ -26,24 +26,24 @@
     "access": "public"
   },
   "license": "MIT",
-  "main": "./core/index.js",
+  "main": "",
   "module": "crm-core",
   "types": "index.d.ts",
   "bugs": {
     "url": "https://github.com/cleverton-crm/crm-core.git"
   },
   "scripts": {
-    "docs": "typedoc",
-    "build": "tsc --declaration core/index.ts",
-    "release": "standard-version",
+    "docs": "../node_modules/.bin/typedoc",
+    "build": "../node_modules/.bin/rimraf core && tsc",
+    "release": "../node_modules/.bin/standard-version",
     "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage",
     "test": "yarn lint && yarn test-typescript",
-    "test-typescript": "tsc --build types/test",
-    "lint": "eslint --ext .js,.jsx,.ts .",
+    "test-typescript": "../node_modules/.bin/tsc --build types/test",
+    "lint": "../node_modules/.bin/eslint --ext .js,.jsx,.ts .",
     "fix": "yarn lint --fix && ./scripts/updateAPIVersion.js",
     "report": "nyc -r text -r lcov report",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "prepare": "husky install"
+    "prepare": "../node_modules/.bin/husky install"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",

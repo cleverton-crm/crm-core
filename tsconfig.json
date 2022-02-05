@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
@@ -11,9 +12,7 @@
     "target": "es2020",
     "strict": true,
     "noEmit": false,
-    "sourceMap": false,
-    "outDir": "./core",
-    "baseUrl": "./",
+    "sourceMap": true,
     "incremental": false,
     "skipLibCheck": true
   },
