@@ -26,7 +26,7 @@ declare module 'crm-core' {
       export interface Schema {
         _id?: string;
         id?: string;
-        object: 'client';
+        object: string | 'client';
         first: string;
         last: string;
         middle: string;

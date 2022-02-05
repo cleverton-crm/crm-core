@@ -24,31 +24,31 @@ declare module 'crm-core' {
         /** Ответственный */
         owner: string;
 
-        author: string;
+        author?: string;
         /** Кто имеет доступ  к данным */
-        permissions: Map<string, any>;
+        permissions?: Map<string, any>;
 
-        active: boolean;
-        object: string | 'task';
+        active?: boolean;
+        object?: string | 'task';
         type: string | 'lead' | 'deal';
-        description: string;
-        status: string | Core.Deals.LeadStatus;
-        tags: Array<string>;
-        company: string;
-        attachments: Map<string, any>;
-        activity: Map<string, any>;
-        price: number;
-        currency: string;
-        fuelType: string;
-        amountFuel: number;
-        startDate: Date;
-        endDate: Date;
-        information: Map<string, any>;
-        source: string;
-        createdAt: Date;
-        updatedAt: Date;
-        client: string;
-        contacts: Core.Deals.Contacts;
+        description?: string;
+        status?: string | Core.Deals.LeadStatus;
+        tags?: Array<string>;
+        company?: string;
+        attachments?: Map<string, any>;
+        activity?: Map<string, any>;
+        price?: number;
+        currency?: string;
+        fuelType?: string;
+        amountFuel?: number;
+        startDate?: Date;
+        endDate?: Date;
+        information?: Map<string, any>;
+        source?: string;
+        createdAt?: Date;
+        updatedAt?: Date;
+        client?: string;
+        contacts?: [Core.Client.Schema, Core.Company.Schema];
       }
 
       export interface ArchiveData {

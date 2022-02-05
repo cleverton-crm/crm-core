@@ -8,6 +8,7 @@
 /// <reference path="../types/clients.d.ts" />
 /// <reference path="../types/personal.d.ts" />
 /// <reference path="../types/profiles.d.ts" />
+/// <reference path="../types/news.d.ts" />
 /// <reference types="node" />
 import { Observable } from 'rxjs';
 declare module 'crm-core' {
