@@ -69,9 +69,14 @@ declare module 'crm-core' {
 
         /** Поле для архивации техники */
         active: boolean;
-  
+
+        /** Фотография транспорта */
+        avatar: Map<string, any>;
+
         _id: string;
+
         createdAt: string;
+
         updatedAt: string;
       }
     }

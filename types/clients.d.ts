@@ -27,6 +27,7 @@ declare module 'crm-core' {
         _id?: string;
         id?: string;
         object: string | 'client';
+        avatar: Map<string, any>;
         first: string;
         last: string;
         middle: string;
