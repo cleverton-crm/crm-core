@@ -53,11 +53,13 @@ declare module 'crm-core' {
 
       export interface ArchiveData {
         id: string;
+        userId: string;
         active: boolean;
       }
 
       export interface UpdateData {
         id: string;
+        userId: string;
         data: Core.Client.Schema;
       }
 
