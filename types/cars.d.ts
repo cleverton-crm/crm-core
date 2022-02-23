@@ -14,12 +14,14 @@ declare module 'crm-core' {
       /** Данные для архивации техники */
       export interface ArchiveData {
         id: string;
+        userId: string;
         active: boolean;
       }
 
       /** Данные для изменения техники */
       export interface UpdateData {
         id: string;
+        userId: string;
         data: Core.Cars.Schema;
       }
 

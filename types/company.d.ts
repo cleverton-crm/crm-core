@@ -275,6 +275,7 @@ declare module 'crm-core' {
 
       export interface UpdateData {
         id: string;
+        userId: string;
         data: Core.Company.Schema;
       }
 
@@ -356,6 +357,7 @@ declare module 'crm-core' {
        */
       export interface ArchiveData {
         id: string;
+        userId: string;
         active: boolean;
       }
     }
