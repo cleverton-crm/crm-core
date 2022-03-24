@@ -15,17 +15,16 @@ declare module 'crm-core' {
           address?: string // Адрес
           havePump?: boolean // Наличе насоса
           distance?: string // Дистанция по бездорожью
-          fuels: IFuelInfo[] // Виды топлива
+          fuels: FuelInfo[] // Виды топлива
           resultCapacity: number // Емкость по объекту (складывается из всех видов топлива)
           resultConsumption: number // Потребление по объекту (складывается из всех видов топлива)
-          ownerId: string // Ответсвенный объекта парка (тот кто создал)
-          ownerFirst: string // Имя
-          ownerLast: string // Фамилия
         }
 
         export interface Park {
-          companyId: string // id компании
-          objects: IParkObject[] // Объекты парка
+          company: string // id компании
+          author: string
+          object: string | 'park';
+          objects: ParkObject[] // Объекты парка
           allCapacity: number // Общая емкость
           allConsumption: number // Общее потребление
         }
