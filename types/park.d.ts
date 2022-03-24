@@ -1,7 +1,7 @@
 declare module 'crm-core' {
   export namespace Core {
     export namespace Company {
-      export namespace Park {
+      export namespace ParkCompany {
         interface FuelInfo {
           id: string
           name: string // Тип топлива
