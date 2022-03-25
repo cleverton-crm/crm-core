@@ -23,6 +23,7 @@ declare module 'crm-core' {
         export interface Park {
           company: string // id компании
           author: string
+          owner: string
           object: string | 'park';
           stores: ParkObject[] // Объекты парка
         }
