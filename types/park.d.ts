@@ -3,14 +3,14 @@ declare module 'crm-core' {
     export namespace Company {
       export namespace ParkCompany {
         interface FuelInfo {
-          id: string
+          id: number
           name: string // Тип топлива
           capacity: number // Емкость
           consumption: number // Потребление
         }
 
         export interface ParkObject {
-          id: string
+          id: number
           name: string // Название
           address?: string // Адрес
           havePump?: boolean // Наличе насоса
