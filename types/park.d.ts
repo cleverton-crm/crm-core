@@ -29,6 +29,7 @@ declare module 'crm-core' {
         }
 
         export interface FuelInfoSchema {
+          id: string
           name: string // Тип топлива
           capacity: number // Емкость
           consumption: number // Потребление
