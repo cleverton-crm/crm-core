@@ -6,6 +6,7 @@
 /// <reference path="./extend.d.ts" />
 /// <reference path="./mongoose.d.ts" />
 /// <reference path="./news.d.ts" />
+/// <reference path="./rooms.d.ts" />
 /// <reference path="./personal.d.ts" />
 /// <reference path="./profiles.d.ts" />
 /// <reference path="./settings.d.ts" />
